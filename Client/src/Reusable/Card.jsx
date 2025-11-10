@@ -6,7 +6,7 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
     <div className="flex flex-col items-center w-64 relative">
       <div className="bg-gray-100 p-6 w-full h-60 shadow-md rounded-lg relative overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-105 flex items-center justify-center">
         
-        // discount add it will only appers only when discount prop is passed fro that we used &&
+        {/*  discount add it will only appers only when discount prop is passed fro that we used && */}
         {discount && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
             {discount}
@@ -27,7 +27,7 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
         </div>
       </div>
 
-     //title and price 
+     {/* title and price  */}
       <h2 className="text-lg font-semibold mt-3 text-center">{title}</h2>
 
       <div className="flex space-x-3">
