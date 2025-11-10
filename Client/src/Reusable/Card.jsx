@@ -3,8 +3,8 @@ import { Heart, Eye } from "lucide-react";
 
 const Card = ({ title, newprice, oldprice, image, discount }) => {
   return (
-    <div className="flex flex-col items-center w-64 relative">
-      <div className="bg-gray-100 p-6 w-full h-60 shadow-md rounded-lg relative overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-105 flex items-center justify-center">
+    <div className="flex flex-col  w-64 relative">
+      <div className="bg-gray-100 p-6 w-full h-60 shadow-md  relative overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-105 flex items-center justify-center">
         
         {/*  discount add it will only appers only when discount prop is passed fro that we used && */}
         {discount && (
@@ -28,7 +28,7 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
       </div>
 
      {/* title and price  */}
-      <h2 className="text-lg font-semibold mt-3 text-center">{title}</h2>
+      <h2 className="text-lg font-semibold mt-3 ">{title}</h2>
 
       <div className="flex space-x-3">
         <h1 className="text-red-500 font-semibold">{newprice}</h1>
