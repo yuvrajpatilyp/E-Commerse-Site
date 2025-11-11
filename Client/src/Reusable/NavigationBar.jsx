@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import React from "react";
 import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
 
@@ -9,9 +10,9 @@ const NavigationBar = () => {
 
         <ul className="hidden md:flex gap-8 text-gray-700 font-medium">
           <li>Home</li>
-          <li>Contact</li>
-          <li>About</li>
-          <li>Sign Up</li>
+          <li><Link to ="/contact">Contact</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/sign up">Sign Up</Link></li>
         </ul>
 
         <div className="flex items-center gap-4">
