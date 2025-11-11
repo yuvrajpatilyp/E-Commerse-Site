@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import NavigationBar from './Reusable/NavigationBar'
 
-function App() {
+import Login from './Login/Login';
+
+
+export default function App() {
   return (
-    <div>
-      
+    <div className="min-h-screen">
+      <NavigationBar/>
+      <Login />
     </div>
-  )
+  );
 }
-
-export default App
