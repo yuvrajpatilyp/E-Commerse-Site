@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import AccountPage from "./Account/AccountPage";
 
-function App() {
+export default function App() {
   return (
     <div>
-      
+      <AccountPage />
     </div>
-  )
+  );
 }
-
-export default App
