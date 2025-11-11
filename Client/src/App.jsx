@@ -1,11 +1,11 @@
-import React from 'react'
+import CartPage from "./CartPage";
+import NotFound from "./NotFound";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <CartPage />
+      <NotFound />
+    </>
+  );
 }
-
-export default App
