@@ -1,11 +1,35 @@
-import React from 'react'
+// import React from "react";
+// import NavigationBar from './Reusable/NavigationBar'
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Signup from "./Signup"; 
 
-function App() {
+// export default function App() {
+//   return (
+//     <NavigationBar/>
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Signup />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+
+
+import React from "react";
+import NavigationBar from "./Reusable/NavigationBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signup from "./Signup";
+
+export default function App() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Signup />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
-
-export default App
