@@ -4,7 +4,7 @@ import Footer from './Reusable/Footer'
 function App() {
   return (
     <div>
-      <Footer/>
+    
     </div>
   )
 }
