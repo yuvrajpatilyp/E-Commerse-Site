@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import NavigationBar from "../Reusable/NavigationBar";
+import PageNavigator from "../Reusable/PageNavigator";
+
 
 function AccountPage() {
   const [info, setInfo] = useState({
-    firstName: "teju",
-    lastName: "ghadage",
-    email: "teju2001@gmail.com",
-    address: "At post wangi",
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
   });
 
   const [selected, setSelected] = useState("My Profile");
@@ -17,37 +19,101 @@ function AccountPage() {
     confirm: false,
   });
 
+  const [passwords, setPasswords] = useState({
+    old: "",
+    new: "",
+    confirm: "",
+  });
+
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
 
+  
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswords({ ...passwords, [name]: value });
+  };
+
+  
   const resetChanges = () => {
     setInfo({
-      firstName: "teju",
-      lastName: "ghadage",
-      email: "teju2001@gmail.com",
-      address: "At post wangi",
+      firstName: "",
+      lastName: "",
+      email: "",
+      address: "",
     });
+    setPasswords({ old: "", new: "", confirm: "" });
+    setErrors({ email: "", password: "", confirmPassword: "" });
     alert("Changes cancelled!");
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    alert("Profile Updated ✅");
-  };
 
   const toggleShow = (field) => {
     setShowPass((prev) => ({ ...prev, [field]: !prev[field] }));
   };
 
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { email: "", password: "", confirmPassword: "" };
+
+    if (!emailRegex.test(info.email)) {
+      newErrors.email = "Please enter a valid email address.";
+      valid = false;
+    }
+
+    if (!passwordRegex.test(passwords.new)) {
+      newErrors.password =
+        "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.";
+      valid = false;
+    }
+
+    if (passwords.new !== passwords.confirm) {
+      newErrors.confirmPassword = "Passwords do not match.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  
+  const submitForm = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      alert("Profile Updated ✅");
+    } else {
+      alert("Please fix the errors before submitting ❌");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center py-6 px-3 sm:px-6 font-sans">
-     <NavigationBar />
-      <div className="w-full sm:w-11/12 md:w-4/5 text-xs sm:text-sm text-gray-500 mb-4">
-        Home / <span className="text-black font-medium">My Account</span>
+   
+      <NavigationBar />
+
+      
+      <div className="w-full sm:w-11/12 md:w-4/5 mt-4 mb-2">
+        <PageNavigator page="My Account" />
       </div>
 
+      
       <div className="w-full sm:w-11/12 md:w-4/5 flex flex-col md:flex-row gap-6">
        
         <div className="md:w-1/4 border border-gray-200 rounded-lg p-4 sm:p-5 bg-gray-50 text-sm shadow-sm">
@@ -95,20 +161,21 @@ function AccountPage() {
                   : "hover:text-red-500"
               }`}
             >
-              Wishlist
+             
             </li>
           </ul>
         </div>
 
+       
         <div className="flex-1 border border-gray-200 rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
           {selected === "My Profile" ? (
             <>
               <h3 className="text-red-500 font-semibold mb-5 sm:mb-6 text-base sm:text-lg">
-                Edit Profile
+                Edit Your Profile
               </h3>
 
               <form onSubmit={submitForm} className="space-y-6">
-                
+               
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {[
                     { label: "First Name", name: "firstName" },
@@ -125,15 +192,25 @@ function AccountPage() {
                         value={info[name]}
                         onChange={handleInput}
                         type={name === "email" ? "email" : "text"}
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 bg-gray-50 focus:ring focus:ring-red-200"
+                        className={`w-full border rounded-md px-3 py-2 bg-gray-50 focus:ring ${
+                          errors.email && name === "email"
+                            ? "border-red-400 focus:ring-red-200"
+                            : "border-gray-300 focus:ring-red-200"
+                        }`}
                       />
+                      {errors.email && name === "email" && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
 
+              
                 <div>
                   <h4 className="font-medium text-gray-900 mb-3">
-                    Password Change
+                    Password Changes
                   </h4>
 
                   {[
@@ -144,8 +221,16 @@ function AccountPage() {
                     <div className="relative mb-3" key={key}>
                       <input
                         type={showPass[key] ? "text" : "password"}
+                        name={key}
+                        value={passwords[key]}
+                        onChange={handlePasswordChange}
                         placeholder={label}
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 bg-gray-50 focus:ring focus:ring-red-200"
+                        className={`w-full border rounded-md px-3 py-2 bg-gray-50 focus:ring ${
+                          (errors.password && key === "new") ||
+                          (errors.confirmPassword && key === "confirm")
+                            ? "border-red-400 focus:ring-red-200"
+                            : "border-gray-300 focus:ring-red-200"
+                        }`}
                       />
                       <button
                         type="button"
@@ -154,11 +239,23 @@ function AccountPage() {
                       >
                         {showPass[key] ? <EyeOff size={18} /> : <Eye size={18} />}
                       </button>
+
+                     
+                      {errors.password && key === "new" && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.password}
+                        </p>
+                      )}
+                      {errors.confirmPassword && key === "confirm" && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.confirmPassword}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
 
-               
+                
                 <div className="flex flex-col sm:flex-row justify-end gap-3">
                   <button
                     type="button"
@@ -186,6 +283,7 @@ function AccountPage() {
           )}
         </div>
       </div>
+      
     </div>
   );
 }
