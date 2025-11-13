@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Link } from "lucide-react";
  
 function Footer() {
   return (
@@ -34,10 +34,10 @@ function Footer() {
         <div>
           <h2 className="font-bold text-lg mb-3">Account</h2>
           <ul className="text-white text-sm space-y-3">
-            <li>My Account</li>
-            <li>Login / Register</li>
-            <li>Cart</li>
-            <li>Wishlist</li>
+            <li><Link to="/myAccount">My Account</Link></li>
+            <li><Link to="/login">Login </Link>/<Link to="/register"> Register</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/wishlist">Wishlist</Link></li>
             <li>Shop</li>
           </ul>
         </div>
