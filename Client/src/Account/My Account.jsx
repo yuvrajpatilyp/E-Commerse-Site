@@ -97,9 +97,9 @@ function AccountPage() {
   const submitForm = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert("Profile Updated ✅");
+      alert("Profile Updated ");
     } else {
-      alert("Please fix the errors before submitting ❌");
+      alert("Please fix the errors before submitting ");
     }
   };
 
