@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import NavigationBar from "../Reusable/NavigationBar";
 import PageNavigator from "../Reusable/PageNavigator";
-
+import TopHeader from "../Reusable/TopHeader";
 
 function AccountPage() {
   const [info, setInfo] = useState({
@@ -105,7 +105,7 @@ function AccountPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center py-6 px-3 sm:px-6 font-sans">
-   
+      <TopHeader />
       <NavigationBar />
 
       
@@ -283,7 +283,7 @@ function AccountPage() {
           )}
         </div>
       </div>
-      
+    
     </div>
   );
 }
