@@ -1,6 +1,7 @@
 import React from "react";
 import { Heart, Eye } from "lucide-react";
-import { FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa"
+import { useState } from "react";
 
 const Card = ({ title, newprice, oldprice, image, discount }) => {
     const [rating, setRating] = useState(0);
@@ -24,10 +25,10 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
 
 
                 <div className="absolute top-2 right-2 flex flex-col space-y-2">
-                    <button className="bg-white p-1.5 rounded-full shadow hover:bg-gray-200">
-                        <Heart size={16} className="text-gray-700" />
+                    <button className="bg-white p-1.5 rounded-full shadow hover:bg-gray-200 hover:bg-red-400">
+                        <Heart size={16} className="text-gray-700 " />
                     </button>
-                    <button className="bg-white p-1.5 rounded-full shadow hover:bg-gray-200">
+                    <button className="bg-white p-1.5 rounded-full shadow hover:bg-gray-200  hover:bg-red-400">
                         <Eye size={16} className="text-gray-700" />
                     </button>
                 </div>
