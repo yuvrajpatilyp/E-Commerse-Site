@@ -22,12 +22,11 @@ const StarRating = ({ rating, reviews }) => (
 
 export default function BestSellingProducts() {
   return (
-    <section className="max-w-[1100px] mx-auto py-10 px-4 overflow-x-auto">
-      <div className="flex gap-6 flex-nowrap">
+    <section className="max-w-[1100px] mx-auto py-10 px-4">
+      <div className="flex gap-6 flex-nowrap overflow-x-auto scroll-smooth no-scrollbar">
         {products.map((p, index) => (
           <div key={p.id} className="w-64 bg-white rounded shadow group shrink-0">
             <div className="relative bg-gray-100 flex justify-center items-center p-4 rounded-t-md">
-              {/* Badge logic */}
               {index === 0 && (
                 <span className="absolute top-3 left-3 bg-red-600 text-white text-xs px-2 py-1 rounded">
                   35%
@@ -38,18 +37,17 @@ export default function BestSellingProducts() {
                   New
                 </span>
               )}
-
-              {/* Eye Icon Only */}
               <div className="absolute top-3 right-3">
-                <IoIosEye size={22} className="text-gray-700 hover:text-black transition-colors cursor-pointer" />
+                <IoIosEye
+                  size={22}
+                  className="text-gray-700 hover:text-black transition-colors cursor-pointer"
+                />
               </div>
-
               <img
                 src={p.image}
                 alt={p.name}
                 className="w-40 h-36 object-contain transition-transform duration-300 group-hover:scale-105"
               />
-
               <button className="absolute bottom-0 left-0 right-0 py-2 bg-black text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 Add To Cart
               </button>

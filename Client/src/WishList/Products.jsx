@@ -99,9 +99,8 @@ export default function ProductsWithFlash() {
       {/* Products Section */}
       <BestSellingProducts />
 
-      {/* Flash Header Below Products */}
       <section className="w-full h-[100px] flex items-center justify-between mt-4">
-        <div className="flex items-center gap-2"> {/* added gap-2 for space */}
+        <div className="flex items-center gap-2"> 
           <span className="w-3 h-8 bg-[#DB4444] rounded"></span>
           <h2 className="text-black-600 font-semibold text-base">Just For You</h2>
         </div>

@@ -11,17 +11,13 @@ export default function ProductDetails() {
 
   return (
     <section className="w-[1170px] h-[701px] mx-auto px-8 py-8 font-sans text-gray-800">
-      {/* ---------- Breadcrumb ---------- */}
       <nav className="text-gray-500 text-sm mb-6">
         Account / Gaming /{" "}
         <span className="font-semibold text-black">Havic HV G-92 Gamepad</span>
       </nav>
 
-      {/* ---------- Main Layout ---------- */}
       <div className="flex gap-12 h-[calc(701px-80px)]">
-        {/* ---------- Left Section (Images) ---------- */}
         <div className="flex gap-6">
-          {/* Thumbnails — light bg only */}
           <div className="flex flex-col justify-between h-[550px] gap-3">
             {thumbs.map((img, i) => (
               <div
@@ -37,7 +33,6 @@ export default function ProductDetails() {
             ))}
           </div>
 
-          {/* Main Product Image — clean, no bg */}
           <div className="w-[510px] h-[570px] flex items-center justify-center">
             <img
               src="src/assets/havic HV g-92 gamepad.png"
@@ -47,14 +42,13 @@ export default function ProductDetails() {
           </div>
         </div>
 
-        {/* ---------- Right Section (Product Info) ---------- */}
+    
         <div className="flex-1 max-w-[480px] pt-2">
           {/* Product Title */}
           <h1 className="text-2xl font-bold mb-3 leading-tight">
             Havic HV G-92 Gamepad
           </h1>
 
-          {/* Rating / Reviews / Stock */}
           <div className="flex items-center gap-2 mb-4">
             <div className="flex text-yellow-400">
               {[...Array(4)].map((_, i) => (
@@ -84,7 +78,7 @@ export default function ProductDetails() {
           </div>
 
           {/* Price */}
-          <p className="text-2xl font-bold mb-5">$192.00</p>
+          <p className="text-2xl font-normal mb-5">$192.00</p>
 
           {/* Description */}
           <p className="text-gray-600 leading-relaxed mb-6 text-sm">
@@ -126,17 +120,15 @@ export default function ProductDetails() {
               ))}
             </div>
           </div>
-
-          {/* Quantity / Buy / Wishlist */}
           <div className="flex items-center gap-3 mb-8">
-            <div className="flex items-center border border-gray-300 rounded-md">
-              <button className="p-2 hover:bg-red-500 transition-colors">
+            <div className="flex items-center border border-gray-800 rounded-m">
+              <button className="p-2 bg-white text-black rounded-m  transition-colors border-r border-gray-300">
                 <FiMinus size={14} />
               </button>
               <span className="px-4 font-semibold min-w-10 text-center text-sm">
                 2
               </span>
-              <button className="p-2 hover:bg-red-500 transition-colors">
+              <button className="p-2 bg-red-500 text-white border-red-500 transition-colors">
                 <FiPlus size={14} />
               </button>
             </div>
@@ -152,7 +144,6 @@ export default function ProductDetails() {
 
           {/* ---------- Delivery / Return Info ---------- */}
           <div className="border border-gray-300 rounded-md divide-y divide-gray-300">
-            {/* Free Delivery */}
             <div className="flex items-start gap-4 p-4">
               <FiTruck className="w-5 h-5 text-gray-600 mt-0.5 shrink-0" />
               <div>
