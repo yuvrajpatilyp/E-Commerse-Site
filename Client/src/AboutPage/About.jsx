@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import PageNavigator from "../Reusable/PageNavigator";
 
 
 
@@ -94,32 +94,37 @@ const teamData = [
 
 function About() {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 md:px-10 lg:px-16 py-10">
-       
-
+   <div className="max-w-6xl mx-auto py-8 px-6">
+   <PageNavigator page ="About" />
       {/*  About Section */}
-      <section className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20 mb-20">
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800 ml-8">Our Story</h1>
-          <p className="text-gray-700 leading-relaxed text-[15px] ml-8">
-            Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace
-            with an active presence in Bangladesh. Supported by a wide range of tailored
-            marketing, data, and service solutions, Exclusive has 10,500 sellers and 300
-            brands, serving over 3 million customers across the region.
-            <br /><br />
-            Exclusive offers a diverse assortment in categories ranging from consumer
-            electronics to fashion, with more than 1 million products.
-          </p>
-        </div>
+<section className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20 mb-20">
+  <div className="flex-1 text-center md:text-left">
+    <h1 className="text-4xl font-bold mb-4 text-gray-800 ml-8">Our Story</h1>
+    <p className="text-gray-700 leading-relaxed text-lg ">
+      Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace
+      with an active presence in Bangladesh.
+      <br />
+      Supported by a wide range of tailored marketing, data, and service solutions,
+      Exclusive has 10,500 sellers and 300 brands, serving over 3 million customers
+      across the region.
+      <br /><br />
+      Exclusive offers a diverse assortment in categories ranging from consumer
+      electronics to fashion, with more than 1 million products.
+    </p>
 
-        <div className="flex-1 flex justify-center">
-          <img
-            src="./src/assets/About page ad(side image).png"
-            alt="About us"
-            className="rounded-xl shadow-xl w-full max-w-[400px] md:max-w-[500px] object-cover transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-      </section>
+
+
+  </div>
+
+  <div className="flex-1 flex justify-center md:justify-end">
+    <img
+      src="./src/assets/About page ad(side image).png"
+      alt="About us"
+      className=" shadow-xl w-full max-w-[400px] md:max-w-[500px] object-cover transition-transform duration-500 hover:scale-105 md:translate-x-16"
+    />
+  </div>
+</section>
+
 
       {/*  Stats Cards Section  */}
       <section className="mb-20">
@@ -128,7 +133,7 @@ function About() {
             <Link
               key={id}
               to={link}
-              className="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl
+              className="bg-white border border-gray-200  shadow-md hover:shadow-xl
                          w-[230px] h-[230px] flex flex-col justify-center items-center text-center 
                          transition-all duration-300 hover:bg-red-400 hover:text-white group"
             >

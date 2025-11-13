@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Phone, Mail } from "lucide-react";
-import PageNavigator from "../PageNavigator";
+import PageNavigator from "../Reusable/PageNavigator";
+
 
 function Contact() {
   const [form, setForm] = useState({
@@ -67,7 +68,7 @@ function Contact() {
 
   return (
     <div className="max-w-6xl mx-auto py-8 px-6">
-      
+     <PageNavigator page ="Contact" />
       <section className="grid md:grid-cols-3 gap-8">
         {/* Left Info Box */}
         <div className="md:col-span-1 bg-white shadow-md rounded-lg p-6 space-y-6">
