@@ -190,12 +190,12 @@
 
 
 
-
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import TopHeader from "./Reusable/TopHeader";
-import NavigationBar from "./Reusable/NavigationBar";
-import Footer from "./Reusable/Footer";
+import TopHeader from "../Reusable/TopHeader";
+import NavigationBar from "../Reusable/NavigationBar";
+import Footer from "../Reusable/Footer";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
     const [form, setForm] = useState({
@@ -361,7 +361,7 @@ export default function Signup() {
                                 type="submit"
                                 className="w-full bg-red-500 text-white py-3 rounded-md text-base sm:text-lg hover:bg-red-600 transition"
                             >
-                                Create Account
+                                <Link to="/Login">Create Account</Link>
                             </button>
                         </form>
 
@@ -372,7 +372,7 @@ export default function Signup() {
                                 alt="Google"
                                 className="w-5 h-5"
                             />
-                            Sign up with Google
+                            <Link to="">Sign up with Google</Link>
                         </button>
 
                         
@@ -393,3 +393,4 @@ export default function Signup() {
         </>
     );
 }
+
