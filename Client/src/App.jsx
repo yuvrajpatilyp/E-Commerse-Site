@@ -25,10 +25,7 @@ function App() {
     <Flashsales/>
     <Browsebycategory/>
     <BestsellingProduct/>
-    <Categories/>
-    <ExploreProducts/>
-    <FeaturesStrip/>
-    <Footer/>
+   
     
     </div>
   )
