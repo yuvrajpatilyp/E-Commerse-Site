@@ -1,7 +1,7 @@
 import React from "react";
 import { Heart, Eye } from "lucide-react";
 import { FaStar } from "react-icons/fa";
-
+import { useState } from "react";
 const Card = ({ title, newprice, oldprice, image, discount }) => {
     const [rating, setRating] = useState(0);
 
