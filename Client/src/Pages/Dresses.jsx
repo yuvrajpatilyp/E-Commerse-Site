@@ -1,29 +1,37 @@
 import React from 'react'
 import Card from '../Reusable/Card'
+import Dress1 from '../assets/Dresses/Women  Pink Calf Length Dress.jpg'
+import Dress2 from '../assets/Dresses/women fit and flare.jpg'
+import Dress3 from '../assets/Dresses/Women fit and flare pink.jpg'
+import Dress4 from '../assets/Dresses/Women Flare GreenDress.jpg'
+import Dress5 from '../assets/Dresses/women Maroon dress.jpg'
+import Dress6 from '../assets/Dresses/women Maxi Beige .jpg'
+import Dress7 from '../assets/Dresses/women maxi multicolor.jpg'
+import Dress8 from '../assets/Dresses/women muticolor black dress.jpg'
 
 function Dresses() {
   return (
-    <div>
-    <div className='flex grid-cols-4'>
+    <div className='ms-12 p-6'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center '>
         <Card  
-      image=""
-       title=""
+      image={Dress1}
+       title="Women Pink Calf Length Dress"
+       newprice="$"
+       oldprice="$160"
+       discount="40%"
+      />
+
+       <Card  
+      image={Dress2}
+       title="Women fit and flare"
        newprice="$120"
        oldprice="$160"
        discount="40%"
       />
 
        <Card  
-      image=""
-       title=""
-       newprice="$120"
-       oldprice="$160"
-       discount="40%"
-      />
-
-       <Card  
-      image=""
-       title=""
+      image={Dress3}
+       title="Women fit and flare pink"
        newprice="$120"
        oldprice="$160"
        discount="40%"
@@ -31,8 +39,8 @@ function Dresses() {
 
 
        <Card  
-      image=""
-       title=""
+      image={Dress4}
+       title="Women Flare GreenDress"
        newprice="$120"
        oldprice="$160"
        discount="40%"
@@ -41,35 +49,35 @@ function Dresses() {
         
 
 
-      <div className='flex grid-cols-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  justify-items-center mt-8 '>
 
          <Card  
-      image=""
-       title=""
+      image={Dress5}
+       title="Women Maroon dress"
        newprice="$120"
        oldprice="$160"
        discount="40%"
       />
 
        <Card  
-      image=""
-       title=""
+      image={Dress6}
+       title="Women Maxi Beige"
        newprice="$120"
        oldprice="$160"
        discount="40%"
       />
 
        <Card  
-      image=""
-       title=""
+      image={Dress7}
+       title="Women maxi multicolor"
        newprice="$120"
        oldprice="$160"
        discount="40%"
       />
 
        <Card  
-      image=""
-       title=""
+      image={Dress8}
+       title="Women muticolor black dress"
        newprice="$120"
        oldprice="$160"
        discount="40%"

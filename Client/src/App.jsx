@@ -1,27 +1,42 @@
-import React from 'react'
 
-import TopHeader from './Categorydropdown/TopHeader'
-import Herosection from './Herosection'
-import Flashsection from './Flashsection'
-import Categorysection from './Categorydropdown/Categorysection'
-import Bestsellingproducts from './Bestsellingproducts'
-import NavigationBar from './Reusable/NavigationBar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
+ 
+// Import your subcategory components directly
 
+import Shirts from "./Pages/Shirts";
+import Pants from "./Pages/Pants";
+import Dresses from "./Pages/Dresses";
+import Mensshoes from "./Pages/Mensshoes";
+import WomenShoes from "./Pages/WomenShoes"
+import CategorySidebar from "./Categorydropdown/CategorySidebar";
+
+
+ 
 function App() {
   return (
-    <div>
-  <TopHeader/>    
-  <NavigationBar />
-   <Herosection />
-   
-   <Flashsection />
-   <Categorysection />
-   <Bestsellingproducts />
-    
-    </div>
-  )
-}
+    <>
 
-export default App
+ <CategorySidebar />
+
+<Routes>
+ 
+        {/* MEN ROUTES */}
+<Route path="/mens/shirts" element={<Shirts />} />
+<Route path="/mens/pants" element={<Pants />} />
+ <Route path="/mens/shoes" element={<Mensshoes />} />
+        {/* WOMEN ROUTES */}
+<Route path="/womens/dresses" element={<Dresses />} />
+<Route path="/womens/shoes" element={<WomenShoes />} />
+
+
+ 
+        
+</Routes>
+
+</>
+  );
+}
+ 
+export default App;

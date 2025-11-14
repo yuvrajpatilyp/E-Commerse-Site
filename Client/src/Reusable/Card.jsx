@@ -10,8 +10,8 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
         setRating(starIndex);
     };
     return (
-        <div className="flex flex-col  w-64 relative">
-            <div className="bg-gray-100 p-6 w-full h-60 shadow-md  relative overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-105 flex items-center justify-center">
+        <div className="flex flex-col w-full max-w-xs mx-auto relative ">
+            <div className="bg-gray-100   p-6 w-full h-60 shadow-md  relative overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-105 flex items-center justify-center">
 
                 {/*  discount add it will only appers only when discount prop is passed fro that we used && */}
                 {discount && (
@@ -21,7 +21,7 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
                 )}
 
 
-                <img src={image} alt={title} className="object-contain h-40" />
+                <img src={image} alt={title} className="object-contain h-44 " />
 
 
                 <div className="absolute top-2 right-2 flex flex-col space-y-2">
@@ -59,3 +59,5 @@ const Card = ({ title, newprice, oldprice, image, discount }) => {
 };
 
 export default Card;
+
+
