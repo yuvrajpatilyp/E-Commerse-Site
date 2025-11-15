@@ -4,6 +4,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ArrowRight } from "lucide-react";
+import CategorySidebar from "../Categorydropdown/CategorySidebar";
 
 function Sidebar() {
   const slides = [
@@ -45,31 +46,7 @@ function Sidebar() {
     <>
      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full px-4 sm:px-6 md:px-10 mt-6">
 
-  {/* LEFT SIDEBAR MENU */}
-  <div className="space-y-5 text-base md:text-lg md:border-r md:pr-6">
-
-    {/* Dropdowns */}
-    <div className="space-y-4">
-      <select className="">
-        <option>Women's Fashion</option>
-      </select>
-      <br/>
-      <select className="">
-        <option>Men's Fashion</option>
-      </select>
-    </div>
-
-    {/* Categories List */}
-    <ul className="space-y-4 mt-1 font-medium text-gray-700">
-      <li className="cursor-pointer hover:text-red-500">Electronics</li>
-      <li className="cursor-pointer hover:text-red-500">Home & Lifestyle</li>
-      <li className="cursor-pointer hover:text-red-500">Medicine</li>
-      <li className="cursor-pointer hover:text-red-500">Sports & Outdoor</li>
-      <li className="cursor-pointer hover:text-red-500">Baby’s & Toys</li>
-      <li className="cursor-pointer hover:text-red-500">Groceries & Pets</li>
-      <li className="cursor-pointer hover:text-red-500">Health & Beauty</li>
-    </ul>
-  </div>
+     <CategorySidebar/>
 
   {/* RIGHT SLIDER */}
   <div className="md:col-span-3 w-full">

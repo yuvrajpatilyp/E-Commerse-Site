@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Reusable/Card";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 function Flashsales() {
   const [time, setTime] = useState({
-    hours: 12,
     days: 5,
+    hours: 12,
     minutes: 59,
     seconds: 29,
   });
@@ -12,7 +13,7 @@ function Flashsales() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime((prev) => {
-        let { hours, days, minutes, seconds } = prev;
+        let { days, hours, minutes, seconds } = prev;
 
         if (seconds > 0) seconds -= 1;
         else {
@@ -27,7 +28,8 @@ function Flashsales() {
             }
           }
         }
-        return { hours, days, minutes, seconds };
+
+        return { days, hours, minutes, seconds };
       });
     }, 1000);
 
@@ -44,42 +46,42 @@ function Flashsales() {
           <h2 className="text-xl font-semibold text-red-600">Today’s</h2>
         </div>
 
-        {/* Flash Sales + Timer */}
+        {/* Flash Sales + Timer + Arrows */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-5">
 
-          <h2 className="text-3xl font-bold w-full md:w-auto text-center md:text-left">
-            Flash Sales
-          </h2>
+          {/* Flash Sale + Timer */}
+          <div className="flex items-center gap-10">
+            <h2 className="text-3xl font-bold">Flash Sales</h2>
 
-          {/* Timer */}
-          <div className="flex gap-3 mr-90">
-            {[
-              ["Hrs", time.hours],
-              ["Days", time.days],
-              ["Min", time.minutes],
-              ["Sec", time.seconds],
-            ].map(([label, value], idx) => (
-              <div
-                key={idx}
-                className="w-16 h-16 flex flex-col items-center justify-center"
-              >
-                <span className="text-sm font-semibold">{label}</span>
-                <span className="text-xl font-bold">
-                  {String(value).padStart(2, "0")}
-                </span>
-              </div>
-            ))}
+            {/* Timer */}
+            <div className="flex gap-6">
+              {[
+                ["Days", time.days],
+                ["Hrs", time.hours],
+                ["Min", time.minutes],
+                ["Sec", time.seconds],
+              ].map(([label, value], idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <span className="text-xs font-medium">{label}</span>
+                  <span className="text-2xl font-bold">
+                    {String(value).padStart(2, "0")}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Buttons */}
+          {/* Arrow Buttons */}
           <div className="flex gap-2">
             <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
-              ←
+              <ArrowLeft size={20} />
             </button>
+
             <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
-              →
+              <ArrowRight size={20} />
             </button>
           </div>
+
         </div>
 
         {/* Products Grid */}
@@ -99,14 +101,14 @@ function Flashsales() {
             discount="12%"
           />
           <Card
-            image="src/assets/IPS LCD monitor.png"
+            image="./src/assets/IPS LCD monitor.png"
             newprice="$156"
             oldprice="231"
             title="IPS LCD Gaming Monitor"
             discount="12%"
           />
           <Card
-            image="src/assets/S-Series Chair.png"
+            image="./src/assets/S-Series Chair.png"
             newprice="$156"
             oldprice="231"
             title="S-Series Gaming Chair"

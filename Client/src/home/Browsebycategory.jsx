@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Camera,
-  Laptop,
-  Watch,
-  Headphones,
-  Smartphone,
-  Gamepad2,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import {Camera,Laptop,Watch, Headphones,Smartphone,Gamepad2,} from "lucide-react";
 
 function Browsebycategory() {
   return (
@@ -27,13 +21,15 @@ function Browsebycategory() {
           </h2>
 
           <div className="flex gap-2">
-            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
-              ←
-            </button>
-            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
-              →
-            </button>
-          </div>
+  <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
+    <ArrowLeft size={20} />
+  </button>
+  
+  <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
+    <ArrowRight size={20} />
+  </button>
+</div>
+
         </div>
 
         {/* RESPONSIVE GRID */}
