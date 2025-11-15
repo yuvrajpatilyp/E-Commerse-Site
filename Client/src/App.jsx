@@ -3,13 +3,15 @@ import { Routes,Route } from 'react-router-dom'
 import TopHeader from './Reusable/TopHeader'
 import NavigationBar from './Reusable/NavigationBar'
 import Footer from './Reusable/Footer'
+import Laptop from './CategoryPages/Laptop'
+import Mobile from './CategoryPages/Mobile'
 
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      <TopHeader/>
+      {/* <TopHeader/>
 
       <NavigationBar isLoggedIn={isLoggedIn} />
 
@@ -22,7 +24,9 @@ function App() {
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
 
-      <Footer />
+      <Footer /> */}
+      <Laptop/>
+      <Mobile/>
     </div>
   );
 }
