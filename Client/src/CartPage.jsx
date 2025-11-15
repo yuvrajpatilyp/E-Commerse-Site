@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavigationBar from "./Reusable/NavigationBar";
+import Footer from "./Reusable/Footer";
 
 export default function CartPage() {
   const [items, setItems] = useState([
@@ -18,7 +19,6 @@ export default function CartPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <NavigationBar />
-
       <div className="w-full px-10 py-10">
         <h2 className="text-xl mb-6 text-gray-600">Home / Cart</h2>
 
@@ -101,6 +101,8 @@ export default function CartPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
+   
   );
-} 
+}
