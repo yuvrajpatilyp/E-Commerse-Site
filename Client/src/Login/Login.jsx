@@ -1,80 +1,71 @@
 import React, { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import TopHeader from "../Reusable/TopHeader";
+import NavigationBar from "../Reusable/NavigationBar";
+import Footer from "../Reusable/Footer";
+import { Link } from "react-router-dom";
 
 export default function Login({ setIsLoggedIn }) {
- 
   const [form, setForm] = useState({ identifier: "", password: "" });
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
-//   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//   const mobileRegex = /^[0-9]{10}$/;
-//   const passwordRegex =/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,12}$/;
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  //  Validation function 
   const validate = () => {
-    const newErrors = {};
-
-    
-    /*
-    if (!form.identifier)
-      newErrors.identifier = "Email or Mobile Number is required.";
-    else if (!emailRegex.test(form.identifier) && !mobileRegex.test(form.identifier))
-      newErrors.identifier = "Invalid Email or 10-digit Mobile Number.";
-
-    if (!form.password)
-      newErrors.password = "Password is required.";
-    else if (!passwordRegex.test(form.password))
-      newErrors.password =
-        "Password must be 8-12 chars, include uppercase, lowercase, digit, and special character.";
-    */
-
+    const newErrors = {
+      identifier: !form.identifier.trim() && "Username is required",
+      password: !form.password.trim() && "Password is required",
+    };
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return !newErrors.identifier && !newErrors.password;
   };
 
-  // 🔹 Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
 
-    if (validate()) {
-      // Only allow login if username = admin and password = admin
-      if (form.identifier === "admin" && form.password === "admin") {
-        alert("Login Successful");
-
-        // Update login state in App.jsx (so navbar updates globally)
-        setIsLoggedIn(true);
-      } else {
-        alert("Invalid Username or Password ");
-      }
+    if (form.identifier === "admin" && form.password === "admin") {
+      alert("Login Successful");
+      setIsLoggedIn(true);
+    } else {
+      alert("Invalid Username or Password");
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-     
+      <TopHeader />
+      <NavigationBar />
 
-      <div className="flex items-center justify-center flex-grow px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl gap-10">
+      
+      <div className="flex items-center justify-center grow px-4 sm:px-6 lg:px-10 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl gap-10 lg:gap-16">
 
-          {/* Left side image */}
-          <div className="hidden md:block">
+          
+          <div className="hidden md:flex items-center justify-center">
             <img
               src="src/assets/Side image of login and signup.png"
               alt="Shopping"
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-[600px] object-cover"
             />
           </div>
 
-          {/* Right side form section */}
-          <div className="flex flex-col justify-center">
-            <h1 className="text-3xl font-semibold mb-2">Log in to Exclusive</h1>
-            <p className="text-gray-600 mb-8">Enter your details below</p>
+          
+          <div className="flex flex-col justify-center px-2 sm:px-4 lg:px-8">
 
-            <form onSubmit={handleSubmit}>
-              {/* Username Input */}
+            <h1 className="text-2xl sm:text-3xl font-semibold mb-2 sm:mb-3">
+              Log in to Exclusive
+            </h1>
+
+            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
+              Enter your details below
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+
               <InputField
-                type="text"
                 name="identifier"
                 placeholder="Email / Mobile / Username"
                 value={form.identifier}
@@ -82,46 +73,68 @@ export default function Login({ setIsLoggedIn }) {
                 error={errors.identifier}
               />
 
-              {/* Password Input */}
               <InputField
-                type="password"
                 name="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 value={form.password}
                 onChange={handleChange}
                 error={errors.password}
+                icon={showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                onIconClick={() => setShowPassword(!showPassword)}
               />
 
-              {/* Buttons */}
-              <div className="flex items-center justify-between mt-4">
+              
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-2 gap-4">
+
                 <button
                   type="submit"
-                  className="bg-red-500 text-white px-8 py-2 rounded-md hover:bg-red-600"
+                  className="bg-red-500 text-white w-full sm:w-auto px-10 py-2 rounded-md hover:bg-red-600 cursor-pointer"
                 >
-                  Log In
+                  <Link to="/Home Page">Log In</Link>
+                  
                 </button>
 
-                <button className="text-red-500 hover:underline" type="button">
-                  Forget Password?
+                <button
+                  type="button"
+                  className="text-red-500 hover:underline cursor-pointer text-sm sm:text-base text-center sm:text-right"
+                >
+                  <Link to="/">Forget Password?</Link>
+                
                 </button>
               </div>
+
             </form>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
 
-// 🔹 Reusable Input Field component
-function InputField({ error, ...props }) {
+function InputField({ error, icon, onIconClick, ...props }) {
   return (
-    <div>
+    <div className="relative mb-4">
       <input
         {...props}
-        className="border-b border-gray-300 w-full py-2 mb-2 focus:outline-none"
+        className="border-b border-gray-300 w-full py-2 focus:outline-none appearance-none
+                     [&::-ms-reveal]:hidden [&::-ms-clear]:hidden 
+                     [&::-webkit-credentials-auto-fill-button]:hidden 
+                     [&::-webkit-textfield-decoration-container]:hidden"
       />
-      {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-    </div>
+
+      {icon && (
+        <div
+          className="absolute right-2 top-2.5 text-gray-500 cursor-pointer"
+          onClick={onIconClick}
+        >
+          {icon}
+        </div>
+      )}
+
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+   </div>
   );
 }
