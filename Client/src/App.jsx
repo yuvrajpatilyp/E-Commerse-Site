@@ -11,7 +11,7 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      {/* <TopHeader/>
+      <TopHeader/>
 
       <NavigationBar isLoggedIn={isLoggedIn} />
 
@@ -24,9 +24,8 @@ function App() {
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
 
-      <Footer /> */}
-      <Laptop/>
-      <Mobile/>
+      <Footer />
+      
     </div>
   );
 }

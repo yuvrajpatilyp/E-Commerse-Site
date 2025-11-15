@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heart, Eye } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 
