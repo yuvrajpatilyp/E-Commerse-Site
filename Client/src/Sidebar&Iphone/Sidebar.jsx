@@ -37,7 +37,7 @@ function Sidebar() {
       logo: "https://upload.wikimedia.org/wikipedia/commons/5/56/Google_%22G%22_Logo.svg",
       title: "Google Pixel 8 Pro",
       offer: "Flat 10% off + Free Buds",
-      img: "src/assets/pixel8pro.png",
+      img: "src/assets/pixel.png",
       bg: "bg-gradient-to-r from-gray-900 to-green-900",
     },
   ];
