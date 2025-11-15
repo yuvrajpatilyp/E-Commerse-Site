@@ -17,7 +17,7 @@ function Mensshoes() {
     <>
   
     <div className=" ms-12 p-6">
-      {/* Grid container */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center mt-8">
         <Card
           image={Menshoes1}
@@ -43,36 +43,36 @@ function Mensshoes() {
         <Card
           image={Menshoes4}
           title="Pumashoes"
-          newprice="$120"
-          oldprice="$160"
+          newprice="$60"
+          oldprice="$100"
           discount="40%"
         />
         <Card
           image={Menshoes5}
           title="Redtape shoes"
-          newprice="$120"
-          oldprice="$160"
-          discount="40%"
+          newprice="$140"
+          oldprice="$200"
+          discount="30%"
         />
         <Card
           image={Menshoes6}
           title="Runningshoes"
-          newprice="$120"
-          oldprice="$160"
-          discount="40%"
+          newprice="$50"
+          oldprice="$100"
+          discount="50%"
         />
         <Card
           image={Menshoes7}
           title="Sterlinn Running Shoes"
-          newprice="$120"
-          oldprice="$160"
-          discount="40%"
+          newprice="$80"
+          oldprice="$100"
+          discount="20%"
         />
         <Card
           image={Menshoes8}
           title="Woodlang running shoes"
-          newprice="$120"
-          oldprice="$160"
+          newprice="$60"
+          oldprice="$100"
           discount="40%"
         />
       </div>
