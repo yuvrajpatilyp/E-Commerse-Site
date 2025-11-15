@@ -9,9 +9,6 @@ const NavigationBar = ({ isLoggedIn }) => {
 
         <h1 className="text-3xl font-bold text-black">Exclusive</h1>
 
-   
-
-       
         <ul className="hidden md:flex gap-8 text-gray-700 font-medium">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/contact">Contact</Link></li>

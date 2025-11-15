@@ -45,25 +45,10 @@ function Sidebar() {
   return (
   <>
 
- {/*Drop down list */}
-       <div className='flex'>
-        <div className='ml-28 mt-3 text-lg '>
-           
-         <select className=''><option  className=''>women's fashion</option></select>
-         <br/> 
-         <select className='mt-5'><option >men's fashion</option></select>
-           <li className='list-none'>
-           <ul className='mt-6'>  Electronics</ul>
-           <ul className='mt-6'>  Home & Lifestyle</ul>
-           <ul className='mt-6 '> Medicine</ul>
-           <ul className='mt-6'>  Sports & Outdoor</ul>
-           <ul className='mt-6'>  Baby’s & Toys</ul>
-           <ul className='mt-6'>  Groceries & Pets</ul>
-           <ul className='mt-6'>  Health & Beauty</ul>
-           </li>
-         </div>
 
-  </div>
+      
+
+  
     
      <div className="absolute right-[160px]   top-1/2 transform -translate-y-1/2 w-[900px] h-[380px] overflow-hidden shadow-lg z-30">
       <Swiper

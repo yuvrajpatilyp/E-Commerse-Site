@@ -1,5 +1,5 @@
 import React from 'react'
-import SellingProducts from './SellingProducts'
+
 import Card from '../Reusable/Card'
 
 function BestsellingProduct() {
