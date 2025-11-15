@@ -1,7 +1,4 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
  
 // Import your subcategory components directly
 
@@ -29,9 +26,6 @@ function App() {
         {/* WOMEN ROUTES */}
 <Route path="/womens/dresses" element={<Dresses />} />
 <Route path="/womens/shoes" element={<WomenShoes />} />
-
-
- 
         
 </Routes>
 

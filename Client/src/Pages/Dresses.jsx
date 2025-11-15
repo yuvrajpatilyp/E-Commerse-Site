@@ -16,7 +16,7 @@ function Dresses() {
         <Card  
       image={Dress1}
        title="Women Pink Calf Length Dress"
-       newprice="$"
+       newprice="$120"
        oldprice="$160"
        discount="40%"
       />
@@ -24,16 +24,16 @@ function Dresses() {
        <Card  
       image={Dress2}
        title="Women fit and flare"
-       newprice="$120"
-       oldprice="$160"
-       discount="40%"
+       newprice="$50"
+       oldprice="$100"
+       discount="50%"
       />
 
        <Card  
       image={Dress3}
        title="Women fit and flare pink"
-       newprice="$120"
-       oldprice="$160"
+       newprice="$30"
+       oldprice="$50"
        discount="40%"
       />
 
@@ -41,9 +41,9 @@ function Dresses() {
        <Card  
       image={Dress4}
        title="Women Flare GreenDress"
-       newprice="$120"
-       oldprice="$160"
-       discount="40%"
+       newprice="$50"
+       oldprice="$90"
+       discount="44%"
       />
     </div>
         
@@ -54,16 +54,16 @@ function Dresses() {
          <Card  
       image={Dress5}
        title="Women Maroon dress"
-       newprice="$120"
-       oldprice="$160"
-       discount="40%"
+       newprice="$70"
+       oldprice="$120"
+       discount="41%"
       />
 
        <Card  
       image={Dress6}
        title="Women Maxi Beige"
-       newprice="$120"
-       oldprice="$160"
+       newprice="$119"
+       oldprice="$199"
        discount="40%"
       />
 
@@ -78,9 +78,9 @@ function Dresses() {
        <Card  
       image={Dress8}
        title="Women muticolor black dress"
-       newprice="$120"
-       oldprice="$160"
-       discount="40%"
+       newprice="$70"
+       oldprice="$100"
+       discount="30%"
       />
       </div>
     </div>
