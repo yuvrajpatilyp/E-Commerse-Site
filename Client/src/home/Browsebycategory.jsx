@@ -1,7 +1,6 @@
-import React from "react";
+
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import {Camera,Laptop,Watch, Headphones,Smartphone,Gamepad2,} from "lucide-react";
-
 function Browsebycategory() {
   return (
     <>

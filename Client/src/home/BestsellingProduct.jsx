@@ -1,7 +1,13 @@
-import React from "react";
-import Card from "../Reusable/Card";
 
+import Card from "../Reusable/Card";
+import React, { useState, } from "react";
 function BestsellingProduct() {
+   const [cart, setCart] = useState([]);
+     
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
   return (
     <>
       <div className="px-4 md:px-12 py-10 mt-10">
@@ -30,6 +36,7 @@ function BestsellingProduct() {
             newprice="234"
             oldprice="345"
             discount="12%"
+            onAddToCart={addToCart}
           />
 
           <Card
@@ -38,6 +45,7 @@ function BestsellingProduct() {
             newprice="234"
             oldprice="345"
             discount="12%"
+            onAddToCart={addToCart}
           />
 
           <Card
@@ -46,6 +54,7 @@ function BestsellingProduct() {
             newprice="234"
             oldprice="345"
             discount="12%"
+            onAddToCart={addToCart}
           />
 
           <Card
@@ -54,6 +63,7 @@ function BestsellingProduct() {
             newprice="234"
             oldprice="345"
             discount="12%"
+            onAddToCart={addToCart}
           />
 
         </div>

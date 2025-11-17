@@ -3,9 +3,7 @@ import Card from "../Reusable/Card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 function Flashsales() {
-  const [cart, setCart] = useState([]);
- 
-   
+  const [cart, setCart] = useState([]); 
     const addToCart = (product) => {
         setCart((prev) => [...prev, product]);
         console.log("Added to cart:", product);

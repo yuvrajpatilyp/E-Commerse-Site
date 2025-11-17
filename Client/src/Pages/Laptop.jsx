@@ -9,6 +9,7 @@ import Lenovo from '../assets/Laptop/Lenovo Chromebook Laptop.jpg'
 import Samsung from '../assets/Laptop/Samsung Book4 13gen.jpg'
 import Card from '../Reusable/Card'
 
+
 function Laptop() {
     return (
     <div className='ms-12 p-6'>

@@ -24,7 +24,7 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
     };
  
     return (
-        <div className="flex flex-col w-64 relative">
+        <div className="flex flex-col w-64 relative group">
  
             <div className="bg-gray-100 p-6 w-full h-60 shadow-md relative overflow-hidden hover:shadow-lg
                 transition-transform duration-300 hover:scale-105 flex items-center justify-center">
