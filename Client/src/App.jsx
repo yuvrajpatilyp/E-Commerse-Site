@@ -12,6 +12,7 @@ import Mobile from "./Pages/Mobile";
 function App() {
   return (
     <>
+      <div className="w-full overflow-x-hidden">
       <CategorySidebar />
 
       <Routes>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/electronics/laptops" element={<Laptop />} />
         <Route path="/electronics/mobiles" element={<Mobile />} />
       </Routes>
+      </div>
     </>
   );
 }
