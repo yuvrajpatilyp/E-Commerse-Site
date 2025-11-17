@@ -33,7 +33,7 @@ function Browsebycategory() {
         </div>
 
         {/* RESPONSIVE GRID */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 h-38">
 
           {/* Category Box */}
           {[

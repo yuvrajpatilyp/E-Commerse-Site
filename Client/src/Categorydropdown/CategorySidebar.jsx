@@ -35,7 +35,7 @@ const CategorySidebar = () => {
   const [openCategory, setOpenCategory] = useState(null);
 
   return (
-    <div className="bg-white w-64 ms-20 mt-5 border-r border-gray-200 hidden lg:block">
+    <div className="bg-white w-65 ms-18 mt-5 border-r border-gray-200 hidden lg:block">
       <ul className="flex flex-col text-gray-800">
         {categories.map((category, index) => (
           <li
@@ -50,14 +50,14 @@ const CategorySidebar = () => {
             </div>
 
             {openCategory === index && category.subcategories.length > 0 && (
-              <ul className="absolute top-0 left-full min-w-[180px] bg-white/40 backdrop-blur-md  border border-white/20 shadow-lg z-50">
+              <ul className="absolute top-0 left-full min-w-[160px] bg-white/40 backdrop-blur-md  border border-white/20 shadow-lg z-50">
                 {category.subcategories.map((sub, subIndex) => {
                   const route = `/${category.key}/${sub.toLowerCase()}`;
                   return (
                     <li key={subIndex}>
                       <Link
                         to={route}
-                        className="px-4 py-2 block hover:bg-gray-100 whitespace-nowrap"
+                        className="px-8 py-2 block hover:bg-gray-100 whitespace-nowrap"
                       >
                         {sub}
                       </Link>

@@ -49,7 +49,7 @@ function Sidebar() {
      <CategorySidebar/>
 
   {/* RIGHT SLIDER */}
-  <div className="md:col-span-3 w-full">
+  <div className="md:col-span-3 w-full max-w-[90%] mx-auto">
     <Swiper
       modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}

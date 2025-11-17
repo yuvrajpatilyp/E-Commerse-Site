@@ -35,9 +35,9 @@ function Categories() {
   }, []);
 
   return (
-    <section className="w-full px-4 md:px-10 lg:px-16 mt-10">
+    <section className=" w-full max-w-[85%] mx-auto px-4 md:px-10 lg:px-16 mt-10 ">
       <article className="bg-gradient-to-r from-gray-900 to-black text-white rounded-lg overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 p-8 ">
 
           {/* LEFT SIDE CONTENT */}
           <div className="flex flex-col">
