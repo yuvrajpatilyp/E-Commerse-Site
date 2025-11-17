@@ -55,7 +55,7 @@ function Sidebar() {
       pagination={{ clickable: true }}
       autoplay={{ delay: 2000 }}
       loop={true}
-      className="w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-xl overflow-hidden shadow-lg"
+      className="w-full h-[260px] sm:h-[320px] md:h-[380px]  overflow-hidden shadow-lg"
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
