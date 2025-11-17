@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Phone, Mail } from "lucide-react";
 import PageNavigator from "../Reusable/PageNavigator";
 
-
 function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -15,7 +14,7 @@ function Contact() {
 
   // Validation
   const nameRegex = /^[A-Za-z\s]+$/;
-  const emailRegex =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phoneRegex = /^[0-9]{10}$/;
 
   const handleChange = (e) => {
@@ -23,33 +22,30 @@ function Contact() {
     setForm({ ...form, [name]: value });
 
     if (name === "name" && !nameRegex.test(value)) {
-      setErrors((prev) => ({
-        ...prev,
-        name: "Name must contain only alphabets",
-      }));
+      setErrors((p) => ({ ...p, name: "Name must contain only alphabets" }));
     } else if (name === "email" && !emailRegex.test(value)) {
-      setErrors((prev) => ({
-        ...prev,
+      setErrors((p) => ({
+        ...p,
         email: "Enter a valid email address (e.g., abc23@gmail.com)",
       }));
     } else if (name === "phone" && !phoneRegex.test(value)) {
-      setErrors((prev) => ({
-        ...prev,
+      setErrors((p) => ({
+        ...p,
         phone: "Phone number must be 10 digits only",
       }));
     } else {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+      setErrors((p) => ({ ...p, [name]: "" }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newErrors = {};
+
     if (!nameRegex.test(form.name))
       newErrors.name = "Name must contain only alphabets";
     if (!emailRegex.test(form.email))
-      newErrors.email = "Enter a valid email address (e.g., abc23@gmail.com)";
+      newErrors.email = "Enter a valid email address";
     if (!phoneRegex.test(form.phone))
       newErrors.phone = "Phone number must be 10 digits only";
 
@@ -60,60 +56,58 @@ function Contact() {
     }
 
     alert("Your message has been sent successfully!");
-    console.log("Form Submitted:", form);
-
     setForm({ name: "", email: "", phone: "", message: "" });
     setErrors({});
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-8 px-6">
-     <PageNavigator page ="Contact" />
-      <section className="grid md:grid-cols-3 gap-8">
-        {/* Left Info Box */}
-        <div className="md:col-span-1 bg-white shadow-md rounded-lg p-6 space-y-6">
-          {/* Call To Us  */}
-          <div className="bg-white p-4 rounded-lg">
+    <div className="w-full overflow-x-hidden px-4 md:px-6 max-w-6xl mx-auto py-8">
+
+      <PageNavigator page="Contact" />
+
+      <section className="grid gap-6 md:grid-cols-3">
+
+        {/* LEFT BOX */}
+        <div className="bg-white shadow-md rounded-lg p-5 space-y-6 w-full">
+
+          {/* Call to us */}
+          <div>
             <div className="flex items-center space-x-3 mb-2">
               <div className="bg-red-400 p-2 rounded-full">
                 <Phone className="text-white w-5 h-5" />
               </div>
               <h2 className="text-xl font-bold text-gray-800">Call To Us</h2>
             </div>
-            <p className="text-gray-600 text-6m mt-5">
-              We are available 24/7, 7 days a week.
-            </p>
-            <p className="text-gray-600 text-6m mt-2">
-              Phone: +8801611112222
-            </p>
+            <p className="text-gray-600 mt-3">We are available 24/7.</p>
+            <p className="text-gray-600 mt-1">Phone: +8801611112222</p>
           </div>
 
-          {/* Gray line between sections */}
-          <hr className="border-t-2 border-gray-200 my-2" />
+          <hr className="border-gray-200" />
 
           {/* Write To Us */}
-          <div className="bg-white p-4 rounded-lg">
+          <div>
             <div className="flex items-center space-x-3 mb-2">
               <div className="bg-red-400 p-2 rounded-full">
                 <Mail className="text-white w-5 h-5" />
               </div>
-              <h2 className="text-xl font-bold text-gray-800 ">Write To Us</h2>
+              <h2 className="text-xl font-bold text-gray-800">Write To Us</h2>
             </div>
-            <p className="text-gray-600 text-6m mt-5">
+            <p className="text-gray-600 mt-3">
               Fill out our form and we will contact you within 24 hours.
             </p>
-            <p className="text-gray-600 text-6m mt-2">
-              Emails:customer@exclusive.com
-            </p>
-            <p className="text-gray-600 text-6m mt-2">
-              Emails:support@exclusive.com</p>
+            <p className="text-gray-600 mt-1">Email: customer@exclusive.com</p>
+            <p className="text-gray-600 mt-1">Email: support@exclusive.com</p>
           </div>
+
         </div>
 
-        {/* Right Form Box */}
-        <div className="md:col-span-2 bg-white shadow-md rounded-lg p-6">
+        {/* RIGHT BOX */}
+        <div className="md:col-span-2 bg-white shadow-md rounded-lg p-5 w-full overflow-hidden">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-4">
+
+            {/* GRID Inputs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
               {/* Name */}
               <div className="relative">
                 <input
@@ -122,20 +116,18 @@ function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder=" "
-                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 text-gray-900 rounded focus:outline-none ${
+                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 rounded focus:outline-none ${
                     errors.name ? "ring-1 ring-red-500" : ""
                   }`}
                   required
                 />
-                <label
-                  className="absolute left-3 top-2.5 text-gray-500 text-base transition-all duration-200 ease-in-out
-                    peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 
-                    peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
-                >
+                <label className="absolute left-3 top-2 text-gray-500 
+                    peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+                    peer-focus:top-1 peer-focus:text-sm peer-focus:text-red-500">
                   Your Name *
                 </label>
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  <p className="text-red-500 text-sm">{errors.name}</p>
                 )}
               </div>
 
@@ -147,20 +139,18 @@ function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder=" "
-                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 text-gray-900 rounded focus:outline-none ${
+                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 rounded focus:outline-none ${
                     errors.email ? "ring-1 ring-red-500" : ""
                   }`}
                   required
                 />
-                <label
-                  className="absolute left-3 top-2.5 text-gray-500 text-base transition-all duration-200 ease-in-out
-                    peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 
-                    peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
-                >
+                <label className="absolute left-3 top-2 text-gray-500 
+                    peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+                    peer-focus:top-1 peer-focus:text-sm peer-focus:text-red-500">
                   Your Email *
                 </label>
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  <p className="text-red-500 text-sm">{errors.email}</p>
                 )}
               </div>
 
@@ -172,31 +162,28 @@ function Contact() {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder=" "
-                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 text-gray-900 rounded focus:outline-none ${
+                  className={`peer w-full bg-gray-100 px-3 pt-7 pb-3 rounded focus:outline-none ${
                     errors.phone ? "ring-1 ring-red-500" : ""
                   }`}
                   required
                 />
-                <label
-                  className="absolute left-3 top-2.5 text-gray-500 text-base transition-all duration-200 ease-in-out
-                    peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 
-                    peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
-                >
+                <label className="absolute left-3 top-2 text-gray-500 
+                    peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+                    peer-focus:top-1 peer-focus:text-sm peer-focus:text-red-500">
                   Your Phone *
                 </label>
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  <p className="text-red-500 text-sm">{errors.phone}</p>
                 )}
               </div>
             </div>
 
-            {/* Gray Square QR Box above message */}
-           <div className="flex justify-end">
-                  <div className="w-24 h-24 bg-gray-100 flex items-center justify-center  shadow">
-                 
-              </div>
-             </div>
-            {/* Message Box with Scrollbar */}
+            {/* QR Box */}
+            <div className="flex justify-end">
+              <div className="w-24 h-24 bg-gray-100 shadow"></div>
+            </div>
+
+            {/* Message */}
             <div className="relative">
               <textarea
                 name="message"
@@ -204,18 +191,19 @@ function Contact() {
                 onChange={handleChange}
                 rows="6"
                 placeholder=" "
-                className="peer w-full bg-gray-100 px-3 pt-7 pb-3 text-gray-900 rounded focus:outline-none resize-none overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
+                className="peer w-full bg-gray-100 px-3 pt-7 pb-3 rounded 
+                    resize-none overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 
+                    scrollbar-track-gray-200"
               ></textarea>
-              <label
-                className="absolute left-3 top-2.5 text-gray-500 text-base transition-all duration-200 ease-in-out
-                  peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 
-                  peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
-              >
+
+              <label className="absolute left-3 top-2 text-gray-500 
+                  peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+                  peer-focus:top-1 peer-focus:text-sm peer-focus:text-red-500">
                 Your Message
               </label>
             </div>
 
-            {/* Conditional Send Message Button */}
+            {/* Send Button */}
             {form.message.trim() && (
               <div className="flex justify-end">
                 <button
@@ -226,6 +214,7 @@ function Contact() {
                 </button>
               </div>
             )}
+
           </form>
         </div>
       </section>
