@@ -4,6 +4,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ArrowRight } from "lucide-react";
+import CategorySidebar from './CategorySidebar';
 
 function Sidebar() {
 
@@ -49,7 +50,7 @@ function Sidebar() {
       
 
   
-    
+     <CategorySidebar/>  
      <div className="absolute right-[160px]   top-1/2 transform -translate-y-1/2 w-[900px] h-[380px] overflow-hidden shadow-lg z-30">
       <Swiper
         modules={[Pagination, Autoplay]}

@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 import CategorySidebar from './CategorySidebar'
 import Flashsales from './Flashsales'
 import TopHeader from '../Reusable/TopHeader'
-import Browsebycategory from './Browsebycategory'
+
 import BestsellingProduct from './BestsellingProduct'
 import Categories from './Categories'
 import ExploreProducts from './ExploreProducts'
@@ -18,9 +18,9 @@ function Home() {
    
     
     <Sidebar/>
-    <CategorySidebar/>
+  
     <Flashsales/>
-    <Browsebycategory/>
+   
     <BestsellingProduct/>
     <Categories/>
     <ExploreProducts/>
