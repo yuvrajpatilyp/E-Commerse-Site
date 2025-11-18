@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Card from "../Reusable/Card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function Flashsales() {
-  const [cart, setCart] = useState([]); 
-    const addToCart = (product) => {
-        setCart((prev) => [...prev, product]);
-        console.log("Added to cart:", product);
-    };
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product]);
+    console.log("Added to cart:", product);
+  };
+
   const [time, setTime] = useState({
     days: 5,
     hours: 12,
     minutes: 59,
     seconds: 29,
   });
+
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,7 +46,67 @@ function Flashsales() {
 
     return () => clearInterval(interval);
   }, []);
- 
+
+  const products = [
+    {
+      image: "src/assets/earring1.webp",
+      title: "Gold earrings",
+      newprice: "$3,120",
+      oldprice: "$6,160",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/earring2.webp",
+      title: "Stone-studded peacock earring",
+      newprice: "$4,056",
+      oldprice: "8,231",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/earring3.webp",
+      title: "Gold dangel",
+      newprice: "$4,056",
+      oldprice: "7,000",
+      discount: "sale",
+
+    },
+    {
+      image: "src/assets/earring4.webp",
+      title: "Gold earring",
+      newprice: "$5,600",
+      oldprice: "7,000",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/IMG-20251117-WA0011.jpg",
+      title: "Gold floral earring",
+      newprice: "$6,000",
+      oldprice: "$8,000",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/IMG-20251117-WA0012.jpg",
+      title: "gold basket earring",
+      newprice: "$5,000",
+      oldprice: "$7,000",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/IMG-20251117-WA0013.jpg",
+      title: "jhumri-22k",
+      newprice: "$4,000",
+      oldprice: "$7,000",
+      discount: "sale",
+    },
+    {
+      image: "src/assets/IMG-20251117-WA0014.jpg",
+      title: "Gold jhumka hoop earrings",
+      newprice: "5,000.00",
+      oldprice: "$8,000.00",
+      discount: "sale",
+    },
+  ];
+
   return (
     <>
       <div className="px-4 md:px-12 py-10 mt-10">
@@ -54,7 +120,6 @@ function Flashsales() {
         {/* Flash Sales + Timer + Arrows */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-5">
 
-          {/* Flash Sale + Timer */}
           <div className="flex items-center gap-10">
             <h2 className="text-3xl font-bold">Flash Sales</h2>
 
@@ -78,59 +143,40 @@ function Flashsales() {
 
           {/* Arrow Buttons */}
           <div className="flex gap-2">
-            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
+            <button
+              onClick={() => swiperRef.current.slidePrev()}
+              className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200"
+            >
               <ArrowLeft size={20} />
             </button>
 
-            <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200">
+            <button
+              onClick={() => swiperRef.current.slideNext()}
+              className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200"
+            >
               <ArrowRight size={20} />
             </button>
           </div>
 
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <Card
-          image="src/assets/HAVIT HV-G92 Gamepad.png"
-          title="HAVIT HV-G92 Gamepad"
-          newprice="$120"
-          oldprice="$160"
-          discount="-35%"
-          onAddToCart={addToCart}
-          />
-          <Card
-            image="./src/assets/AK-900 Wired Keyboard.png"
-            newprice="$156"
-            oldprice="231"
-            title="AK-900 Wired Keyboard"
-            discount="12%"
-            onAddToCart={addToCart}
-          />
-          <Card
-            image="./src/assets/IPS LCD monitor.png"
-            newprice="$156"
-            oldprice="231"
-            title="IPS LCD Gaming Monitor"
-            discount="12%"
-            onAddToCart={addToCart}
-          />
-          <Card
-            image="./src/assets/S-Series Chair.png"
-            newprice="$156"
-            oldprice="231"
-            title="S-Series Gaming Chair"
-            discount="12%"
-            onAddToCart={addToCart}
-          />
-        </div>
-      </div>
-
-      {/* View All Button */}
-      <div className="flex justify-center my-10">
-        <button className="px-8 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
-          View All Products
-        </button>
+        {/* Product Slider */}
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {products.map((p, i) => (
+            <SwiperSlide key={i}>
+              <Card {...p} onAddToCart={addToCart} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </>
   );

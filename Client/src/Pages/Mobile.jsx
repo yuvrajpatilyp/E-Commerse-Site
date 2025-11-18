@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import pixel10 from '../assets/Mobiles/Googlepixel 10 indio.jpg'
 import pixel10pro from '../assets/Mobiles/Googlepixel 10pro.jpg'
@@ -11,6 +11,13 @@ import Samsungs25 from '../assets/Mobiles/SamsungS25.jpg'
 import Card from '../Reusable/Card'
 
 function Mobile() {
+   const [cart, setCart] = useState([]);
+   
+  
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
   return (
     <div>
       <div className='ms-12 p-6'>
@@ -21,6 +28,7 @@ function Mobile() {
              newprice="$179"
              oldprice="$199"
              discount="10%"
+             onAddToCart={addToCart}
             />
       
              <Card
@@ -29,6 +37,7 @@ function Mobile() {
              newprice="$189"
              oldprice="$199"
              discount="5%"
+             onAddToCart={addToCart}
             />
       
              <Card
@@ -37,6 +46,7 @@ function Mobile() {
              newprice="$120"
              oldprice="$160"
              discount="40%"
+             onAddToCart={addToCart}
             />
       
       
@@ -46,6 +56,7 @@ function Mobile() {
              newprice="$126"
              oldprice="$180"
              discount="30%"
+             onAddToCart={addToCart}
             />
           </div>
       
@@ -59,6 +70,7 @@ function Mobile() {
              newprice="$80"
              oldprice="$160"
              discount="50%"
+             onAddToCart={addToCart}
             />
       
              <Card
@@ -67,6 +79,7 @@ function Mobile() {
              newprice="$102"
              oldprice="$170"
              discount="40%"
+             onAddToCart={addToCart}
             />
       
              <Card
@@ -75,6 +88,7 @@ function Mobile() {
              newprice="$98"
              oldprice="$140"
              discount="30%"
+             onAddToCart={addToCart}
             />
       
              <Card
@@ -83,6 +97,7 @@ function Mobile() {
              newprice="$120"
              oldprice="$160"
              discount="40%"
+             onAddToCart={addToCart}
             />
             </div>
           </div>

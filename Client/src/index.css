@@ -1,3 +1,12 @@
 @import "tailwindcss";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+@import "tailwindcss";
+*{
+box-sizing: border-box;
+}
+ 
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}

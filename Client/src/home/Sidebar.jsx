@@ -10,35 +10,32 @@ function Sidebar() {
   const slides = [
     {
       id: 1,
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-      title: "iPhone 14 Series",
-      offer: "Up to 10% off Voucher",
-      img: "/src/assets/iphone.jpg",
-      bg: "bg-gradient-to-r from-gray-900 to-black",
+      title: "Rounded Diamond Necklace",
+      offer: "Nightfall Sparkle 14KT Diamond Necklace ",
+      img: "src/assets/diamond-Necklace.jpg",
+      bg: "bg-gradient-to-r from-gray-800 to-black",
     },
     {
       id: 2,
-      logo: "src/assets/samsung_logo.png",
-      title: "Galaxy S23 Ultra",
-      offer: "Save 15% on Flagship Phones",
-      img: "src/assets/samsung-galaxy-s23.png",
-      bg: "bg-gradient-to-r from-gray-900 to-blue-900",
+      title: "Gold stone bangle set",
+      offer: "Elegant antique gold ruby traditional bangle set",
+      img: "src/assets/bangles.webp",
+      bg: "bg-gradient-to-r from-gray-800 to-black",
     },
     {
       id: 3,
-      logo: "src/assets/onepluslogo.jpg",
-      title: "OnePlus 12",
-      offer: "Get ₹5000 Exchange Bonus",
-      img: "src/assets/oneplus12.png",
-      bg: "bg-gradient-to-r from-gray-900 to-red-900",
+      title: "Festival Edit",
+      offer: "Dazzling Halo Diamond Finger Ring",
+      img: "src/assets/Diamondring.jpg",
+      bg: "bg-gradient-to-r from-gray-800 to-black",
     },
     {
       id: 4,
-      logo: "src/assets/google-logo.webp",
-      title: "Google Pixel 10 Pro XI",
-      offer: "Flat 10% off + Free Buds",
-      img: "src/assets/pixel10.png",
-      bg: "bg-gradient-to-r from-gray-900 to-orange-900",
+      logo: "",
+      title: "Gold Bar",
+      offer: "100 gram 24 Karat Gold Biscuit",
+      img: "src/assets/goldbiscuit.jpeg",
+      bg: "bg-gradient-to-r from-gray-800 to-black",
     },
   ];
 
@@ -53,7 +50,7 @@ function Sidebar() {
     <Swiper
       modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 2000 }}
+      autoplay={{ delay: 1000 }}
       loop={true}
       className="w-full h-[260px] sm:h-[320px] md:h-[380px]  overflow-hidden shadow-lg"
     >
@@ -65,15 +62,10 @@ function Sidebar() {
             {/* TEXT AREA */}
             <div className="space-y-3 max-w-sm">
               <div className="flex items-center gap-3 text-gray-300">
-                <img
-                  src={slide.logo}
-                  alt="brand"
-                  className="w-7 h-7 invert opacity-80"
-                />
                 <span className="text-lg md:text-xl font-medium">{slide.title}</span>
               </div>
 
-              <h1 className="text-2xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-2xl md:text-4xl font-bold leading-tight ">
                 {slide.offer}
               </h1>
 
@@ -83,11 +75,11 @@ function Sidebar() {
             </div>
 
             {/* IMAGE AREA */}
-            <div className="flex justify-center md:justify-end items-center h-full mt-5 md:mt-0">
+            <div className="">
               <img
                 src={slide.img}
                 alt={slide.title}
-                className="w-48 sm:w-60 md:w-[380px] lg:w-[440px] object-contain drop-shadow-xl"
+                className="w-60 sm:w-70 md:w-[380px] lg:w-[440px] object-contain drop-shadow-xl"
               />
             </div>
           </div>

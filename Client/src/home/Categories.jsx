@@ -41,10 +41,10 @@ function Categories() {
 
           {/* LEFT SIDE CONTENT */}
           <div className="flex flex-col">
-            <p className="text-sm text-green-400">Categories</p>
+            <p className="text-2xl text-orange-400">Leatest</p>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl mt-4 font-semibold leading-tight">
-              Enhance Your <br /> Music Experience
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl mt-4 font-semibold leading-tight">
+             Antique gold finish Lakshmi beaded mangalsutra set
             </h2>
 
             {/* TIMER */}
@@ -67,7 +67,7 @@ function Categories() {
               ))}
             </div>
 
-            <button className="mt-10 bg-green-400 hover:bg-green-500 transition px-8 py-3 rounded font-semibold w-max">
+            <button className="mt-10 bg-orange-400 hover:bg-orange-600 transition px-8 py-3 rounded font-semibold w-max">
               Buy Now!
             </button>
           </div>
@@ -75,7 +75,7 @@ function Categories() {
           {/* RIGHT SIDE IMAGE */}
           <div className="flex justify-center md:justify-end">
             <img
-              src="src/assets/JBL_BOOMBOX.png"
+              src="src\assets\Mangalsutraset.jpg"
               className="w-64 sm:w-80 md:w-[380px] lg:w-[450px] object-contain"
               alt="speaker"
             />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../Reusable/Card'
 import Pant1 from '../assets/pants/Mens dark blue pant.jpg'
 import Pant2 from '../assets/pants/Mens dark grey.jpg'
@@ -10,6 +10,14 @@ import Pant7 from '../assets/pants/Mens slim fit pant.jpg'
 import Pant8 from '../assets/pants/Mens white cotton.jpg'
 
 function Pants() {
+  const [cart, setCart] = useState([]);
+   
+  
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
+
   return (
     <div className='ms-12 p-6'>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -19,6 +27,7 @@ function Pants() {
        newprice="$179"
        oldprice="$199"
        discount="10%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -27,6 +36,7 @@ function Pants() {
        newprice="$189"
        oldprice="$199"
        discount="5%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -35,6 +45,7 @@ function Pants() {
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
 
@@ -44,6 +55,7 @@ function Pants() {
        newprice="$126"
        oldprice="$180"
        discount="30%"
+       onAddToCart={addToCart}
       />
     </div>
         
@@ -57,6 +69,7 @@ function Pants() {
        newprice="$80"
        oldprice="$160"
        discount="50%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -65,6 +78,7 @@ function Pants() {
        newprice="$102"
        oldprice="$170"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -73,6 +87,7 @@ function Pants() {
        newprice="$98"
        oldprice="$140"
        discount="30%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -81,6 +96,7 @@ function Pants() {
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
       </div>
     </div>

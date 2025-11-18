@@ -7,18 +7,19 @@ import Categories from "../home/Categories";
 import ExploreProducts from "../home/ExploreProducts";
 import Featured from "../home/Featured";
 import FeaturesStrip from "../home/FeaturedStrip";
-
+import BridalPicksSlider from "../home/BridalPicksSlider";
 export default function Home() {
   return (
     <>
       <Sidebar />
       <Flashsales />
-      <Browsebycategory />
       <BestsellingProduct />
+       <Browsebycategory />
       <Categories />
       <ExploreProducts />
       <Featured />
-      <FeaturesStrip />
+      <BridalPicksSlider/>
+      {/* <FeaturesStrip /> */}
     </>
   );
 }

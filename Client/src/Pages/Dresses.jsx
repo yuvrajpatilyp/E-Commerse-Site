@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../Reusable/Card'
 import Dress1 from '../assets/Dresses/Women  Pink Calf Length Dress.jpg'
 import Dress2 from '../assets/Dresses/women fit and flare.jpg'
@@ -10,15 +10,24 @@ import Dress7 from '../assets/Dresses/women maxi multicolor.jpg'
 import Dress8 from '../assets/Dresses/women muticolor black dress.jpg'
 
 function Dresses() {
+  const [cart, setCart] = useState([]);
+   
+  
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
+
   return (
     <div className='ms-12 p-6'>
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center '>
+    <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center '>
         <Card  
       image={Dress1}
        title="Women Pink Calf Length Dress"
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -27,6 +36,7 @@ function Dresses() {
        newprice="$50"
        oldprice="$100"
        discount="50%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -35,6 +45,7 @@ function Dresses() {
        newprice="$30"
        oldprice="$50"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
 
@@ -44,12 +55,13 @@ function Dresses() {
        newprice="$50"
        oldprice="$90"
        discount="44%"
+       onAddToCart={addToCart}
       />
     </div>
         
 
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  justify-items-center mt-8 '>
+      <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  justify-items-center mt-8 '>
 
          <Card  
       image={Dress5}
@@ -57,6 +69,7 @@ function Dresses() {
        newprice="$70"
        oldprice="$120"
        discount="41%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -65,6 +78,7 @@ function Dresses() {
        newprice="$119"
        oldprice="$199"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -73,6 +87,7 @@ function Dresses() {
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -81,6 +96,7 @@ function Dresses() {
        newprice="$70"
        oldprice="$100"
        discount="30%"
+       onAddToCart={addToCart}
       />
       </div>
     </div>

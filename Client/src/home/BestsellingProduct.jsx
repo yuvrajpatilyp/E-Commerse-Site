@@ -20,7 +20,7 @@ function BestsellingProduct() {
 
         {/* Heading + Button */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-bold">Best Selling Products</h2>
+          <h2 className="text-3xl font-bold">Best Bangles Offer</h2>
 
           <button className="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md">
             View All
@@ -31,38 +31,38 @@ function BestsellingProduct() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
           <Card
-            image="src/assets/The North coat.png"
-            title="The North Coat"
-            newprice="234"
-            oldprice="345"
-            discount="12%"
+            image="src/assets/Banglesset.webp"
+            title="Elegant antique gold ruby traditional bangle set"
+            newprice="3,340.00"
+            oldprice="6,000.00"
+            discount="sale"
             onAddToCart={addToCart}
           />
 
           <Card
-            image="src/assets/Gucci duffle bag.png"
-            title="Gucci Duffle Bag"
-            newprice="234"
-            oldprice="345"
-            discount="12%"
+            image="src\assets\Banglesset2.webp"
+            title="Stunning antique gold traditional bangle set"
+            newprice=" 5,610.00"
+            oldprice="10,830.00"
+            discount="sale"
             onAddToCart={addToCart}
           />
 
           <Card
-            image="src/assets/RGB liquid cooler.png"
-            title="RGB Liquid Cooler"
-            newprice="234"
-            oldprice="345"
-            discount="12%"
+            image="src\assets\Banglesset3.webp"
+            title="Stunning intricate antique stone bangle set (set of 6 )"
+            newprice="6,310.00"
+            oldprice="9,930.00"
+            discount="sale"
             onAddToCart={addToCart}
           />
 
           <Card
-            image="src/assets/Small Book self.png"
-            title="Small Bookshelf"
-            newprice="234"
-            oldprice="345"
-            discount="12%"
+            image="src\assets\Banglesset4.webp"
+            title="Stunning antique gold ruby traditional bangle set"
+            newprice="2340"
+            oldprice="4590"
+            discount="sale"
             onAddToCart={addToCart}
           />
 

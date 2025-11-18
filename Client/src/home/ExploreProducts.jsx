@@ -41,14 +41,14 @@ function ExploreProducts() {
       {/* Product Grid */}
       <div className="grid  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8
       ">
-        <Card image="./src/assets/Breed dry dog food.png" title="Breed Dry Dog Food" newprice="$960"  onAddToCart={addToCart} />
-        <Card image="./src/assets/Canon EOS DSLR Camera.png" title="CANON EOS DSLR Camera" newprice="$100"  onAddToCart={addToCart}/>
-        <Card image="./src/assets/ASUS FHD Laptop.png" title="ASUS FHD Gaming Laptop" newprice="$360"  onAddToCart={addToCart} />
-        <Card image="./src/assets/Curology product set.png" title="Curology Product Set" newprice="$700"  onAddToCart={addToCart}/>
-        <Card image="./src/assets/Kids Electric car.png" title="Kids Electric Car" newprice="$960"  onAddToCart={addToCart}/>
-        <Card image="./src/assets/jr zoom soccer.png" title="Jr Zoom Soccer Cleats" newprice="$100"  onAddToCart={addToCart}/>
-        <Card image="./src/assets/GP11 Shooter USB Gamepad.png" title="GP11 Shooter USB Gamepad" newprice="$360"  onAddToCart={addToCart}/>
-        <Card image="./src/assets/Quilited satin jacket.png" title="Quilited Satin Jacket" newprice="$700"  onAddToCart={addToCart}/>
+        <Card image="src\assets\jhumka.webp" title="Stunning antique gold kundan pearl drop jhumka earring" newprice="$4,060.00"  onAddToCart={addToCart} />
+        <Card image="src\assets\Chandbaliearring.webp" title="Stunning antique gold multicolor stone fall chandbali earring" newprice="$2,760.00"  onAddToCart={addToCart}/>
+        <Card image="src\assets\necklaceset.jpg" title="maa lakshmi necklace set I Temple Jewellery" newprice="$3,060.00"  onAddToCart={addToCart} />
+        <Card image="src\assets\chokerset.jpg" title="Amazing antique gold maa lakshmi traditional necklace choker set" newprice="$7,000.00"  onAddToCart={addToCart}/>
+        <Card image="src\assets\ring.webp" title="Beautiful kundan floral adjustable finger ring" newprice="$9,060.00"  onAddToCart={addToCart}/>
+        <Card image="src\assets\ring2.webp" title="Cute gold plated kundan finger ring for women" newprice="$6,000.00"  onAddToCart={addToCart}/>
+        <Card image="src\assets\chain.jpg" title="Elegant antique gold plated chain for women" newprice="$7,060.00"  onAddToCart={addToCart}/>
+        <Card image="src\assets\chain2.webp" title="Elegant snake gold plated chain" newprice="$7,000.00"  onAddToCart={addToCart}/>
       </div>
 
       {/* Button */}

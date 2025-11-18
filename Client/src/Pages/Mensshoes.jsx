@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Reusable/Card";
 import NavigationBar from "../Reusable/NavigationBar";
 import Footer from "../Reusable/Footer"
@@ -13,6 +13,14 @@ import Menshoes7 from '../assets/MenShoes/Sterlinn Running Shoes.jpg'
 import Menshoes8 from '../assets/MenShoes/Woodlang running shoes.jpg'
 
 function Mensshoes() {
+  const [cart, setCart] = useState([]);
+   
+  
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
+      
   return (
     <>
   
@@ -25,6 +33,7 @@ function Mensshoes() {
           newprice="$120"
           oldprice="$160"
           discount="40%"
+          onAddToCart={addToCart}
         />
         <Card
           image={Menshoes2}
@@ -32,6 +41,7 @@ function Mensshoes() {
           newprice="$80"
           oldprice="$160"
           discount="50%"
+          onAddToCart={addToCart}
         />
         <Card
           image={MenShoes3}
@@ -39,6 +49,7 @@ function Mensshoes() {
           newprice="$30"
           oldprice="$107"
           discount="70%"
+          onAddToCart={addToCart}
         />
         <Card
           image={Menshoes4}
@@ -46,6 +57,7 @@ function Mensshoes() {
           newprice="$60"
           oldprice="$100"
           discount="40%"
+          onAddToCart={addToCart}
         />
         <Card
           image={Menshoes5}
@@ -53,6 +65,7 @@ function Mensshoes() {
           newprice="$140"
           oldprice="$200"
           discount="30%"
+          onAddToCart={addToCart}
         />
         <Card
           image={Menshoes6}
@@ -60,6 +73,7 @@ function Mensshoes() {
           newprice="$50"
           oldprice="$100"
           discount="50%"
+          onAddToCart={addToCart}
         />
         <Card
           image={Menshoes7}
@@ -67,6 +81,8 @@ function Mensshoes() {
           newprice="$80"
           oldprice="$100"
           discount="20%"
+          onAddToCart={addToCart}
+
         />
         <Card
           image={Menshoes8}
@@ -74,6 +90,7 @@ function Mensshoes() {
           newprice="$60"
           oldprice="$100"
           discount="40%"
+          onAddToCart={addToCart}
         />
       </div>
     </div>

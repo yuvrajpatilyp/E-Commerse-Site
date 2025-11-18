@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../Reusable/Card'
 import shirt1 from '../assets/Shirts/Mens casual blackwear.jpg'
 import shirt2 from '../assets/Shirts/Mens casual white.jpg'
@@ -10,6 +10,14 @@ import shirt7 from '../assets/Shirts/Mens regular fit solid gray.jpg'
 import shirt8 from '../assets/Shirts/Mens slim fit brownwear.jpg'
 
 function Shirts() {
+  const [cart, setCart] = useState([]);
+   
+  
+      const addToCart = (product) => {
+          setCart((prev) => [...prev, product]);
+          console.log("Added to cart:", product);
+      };
+
   return (
     <div className='ms-12 p-6'>
       <div className= 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -19,6 +27,7 @@ function Shirts() {
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -27,6 +36,7 @@ function Shirts() {
        newprice="$149"
        oldprice="$199"
        discount="25%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -35,6 +45,7 @@ function Shirts() {
        newprice="$99"
        oldprice="$179"
        discount="45%"
+       onAddToCart={addToCart}
       />
 
 
@@ -44,6 +55,7 @@ function Shirts() {
        newprice="$129"
        oldprice="$159"
        discount="19%"
+       onAddToCart={addToCart}
       />
     </div>
         
@@ -57,6 +69,7 @@ function Shirts() {
        newprice="$59"
        oldprice="$99"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -65,6 +78,7 @@ function Shirts() {
        newprice="$79"
        oldprice="$149"
        discount="47%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -73,6 +87,7 @@ function Shirts() {
        newprice="$120"
        oldprice="$160"
        discount="40%"
+       onAddToCart={addToCart}
       />
 
        <Card  
@@ -81,6 +96,7 @@ function Shirts() {
        newprice="$160"
        oldprice="$200"
        discount="20%"
+       onAddToCart={addToCart}
       />
       </div>
     </div>

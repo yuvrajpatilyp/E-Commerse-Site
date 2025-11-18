@@ -17,9 +17,13 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
+
     <div>
       <TopHeader />
       <NavigationBar isLoggedIn={isLoggedIn} />
+    
+      <div className="w-full overflow-x-hidden">
+      {/* <CategorySidebar /> */}
 
       {/* ROUTES HERE */}
       <Routes>
@@ -35,6 +39,8 @@ function App() {
 
       <Footer />
     </div>
+    
+</div>
   );
 }
 
