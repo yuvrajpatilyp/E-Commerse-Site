@@ -5,30 +5,25 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    name: "Woman's Fashion",
-    key: "womens",
-    subcategories: ["Dresses", "Tops", "Shoes", "Accessories"],
+    name: "Gold",
+    key:"gold",
+    subcategories: ["Earrings", "Bangles", "Necklace" ,"Rings"],
   },
   {
-    name: "Men's Fashion",
-    key: "mens",
-    subcategories: ["Shirts", "Pants", "Shoes", "Watches"],
+    name: "Diamond",
+    key:"diamond",
+    subcategories: ["Earrings", "Bangles", "Necklace", "Rings"],
   },
   {
-    name: "Electronics",
-    key: "electronics",
-    subcategories: ["Mobiles", "Laptops", "Cameras", "Headphones"],
+    name: "Sliver",
+    key:"silver",
+    subcategories: ["Earrings", "Bangles", "Necklace", "Rings"],
   },
   {
-    name: "Home & Lifestyle",
-    key: "home",
-    subcategories: ["Furniture", "Lighting", "Decor"],
+    name: "Platinum",
+    key:"platinum",
+    subcategories: ["Earrings", "Bangles", "Necklace", "Rings"],
   },
-  { name: "Medicine", key: "medicine", subcategories: [] },
-  { name: "Sports & Outdoor", key: "sports", subcategories: ["Gym", "Cricket", "Football"] },
-  { name: "Baby’s & Toys", key: "baby", subcategories: ["Toys", "Clothes", "Games"] },
-  { name: "Groceries & Pets", key: "groceries", subcategories: ["Pet Food", "Groceries"] },
-  { name: "Health & Beauty", key: "beauty", subcategories: ["Makeup", "Skincare", "Fragrance"] },
 ];
 
 const CategorySidebar = () => {
