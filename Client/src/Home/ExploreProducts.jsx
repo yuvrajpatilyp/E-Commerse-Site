@@ -1,7 +1,13 @@
 import Card from '../Reusable/Card'
- 
+ import { useState } from 'react';
 import React from 'react'
 function ExploreProducts() {
+
+   const [cart, setCart] = useState([]);
+    const addToCart = (product) => {
+        setCart((prev) => [...prev, product]);
+        console.log("Added to cart:", product);
+    };
   return (
     <div className="px-36 py-10">
  
@@ -30,24 +36,28 @@ function ExploreProducts() {
           image="./src/assets/Breed dry dog food.png"
           title="Breed Dry Dog Food"
           newprice="$960"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/Canon EOS DSLR Camera.png"
           title="CANON EOS DSLR Camera"
           newprice="$100"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/ASUS FHD Laptop.png"
           title="ASUS FHD Gaming Laptop"
           newprice="$360"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/Curology product set.png"
           title="Curology Product Set"
           newprice="$700"
+           onAddToCart={addToCart}
          
         />
          
@@ -55,24 +65,28 @@ function ExploreProducts() {
           image="./src/assets/Kids Electric car.png"
           title="Kids Electric Car"
           newprice="$960"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/jr zoom soccer.png"
           title="Jr Zoom Soccer Cleats"
           newprice="$100"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/GP11 Shooter USB Gamepad.png"
           title="GP11 Shooter USB Gamepad"
           newprice="$360"
+           onAddToCart={addToCart}
         />
  
         <Card
           image="./src/assets/Quilited satin jacket.png"
           title="Quilited Satin Jacket"
           newprice="$700"
+           onAddToCart={addToCart}
         />
       </div>
  

@@ -1,8 +1,15 @@
 import React from 'react'
+import { useState } from 'react';
 
 import Card from '../Reusable/Card'
 
 function BestsellingProduct() {
+
+   const [cart, setCart] = useState([]);
+    const addToCart = (product) => {
+        setCart((prev) => [...prev, product]);
+        console.log("Added to cart:", product);
+    };
   return (
     <>
      <div className="px-35 py-10 mt-14">
@@ -26,28 +33,31 @@ function BestsellingProduct() {
            title='The north coat'
            newprice='234'
            oldprice='345'
-           discount='12%'/>
+           discount='12%'
+           onAddToCart={addToCart}/>
 
             <Card 
            image='src/assets/Gucci duffle bag.png'
            title='The north coat'
            newprice='234'
            oldprice='345'
-           discount='12%'/>
+           discount='12%' 
+            onAddToCart={addToCart}/>
 
             <Card 
            image='src/assets/RGB liquid cooler.png'
            title='The north coat'
            newprice='234'
            oldprice='345'
-           discount='12%'/>
+           discount='12%'
+            onAddToCart={addToCart}/>
 
            <Card 
            image='src/assets/Small Book self.png'
            title='The north coat'
            newprice='234'
            oldprice='345'
-           discount='12%'/>
+           discount='12%' onAddToCart={addToCart}/>
 
            </div>
            </div>

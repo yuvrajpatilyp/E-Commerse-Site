@@ -3,6 +3,17 @@ import Card from '../Reusable/Card'
 import { useState,useEffect } from 'react';
 
 function Flashsales() {
+   
+   const [cart, setCart] = useState([]);
+    const addToCart = (product) => {
+        setCart((prev) => [...prev, product]);
+        console.log("Added to cart:", product);
+    };
+  const [rating, setRating] = useState(0);
+ 
+    const handleRating = (starIndex) => {
+        setRating(starIndex);
+    };
     const [time, setTime] = useState({
     hours: 12,
     days: 5,
@@ -92,34 +103,38 @@ function Flashsales() {
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-10">
  
       <Card
-      image='./src/assets/HAVIT HV-G92 Gamepad.png'
+      image='./src/assets/Earrings/earring1.jpeg'
       newprice='$120'
       oldprice='231'
       title="HAVIT HV-G92 Gamepad "
       discount='12%'
+      onAddToCart={addToCart}
       />
 
       <Card
-      image='./src/assets/AK-900 Wired Keyboard.png'
+      image='./src/assets/Earrings/earring2.jpeg'
       newprice='$156'
       oldprice='231'
       title="AK-900 Wired Keyboard "
       discount='12%'
+      onAddToCart={addToCart}
       />
       <Card
-      image='src/assets/IPS LCD monitor.png'
+      image='./src/assets/Earrings/earring3.webp'
       newprice='$156'
       oldprice='231'
       title="IPS LCD Gaming Monitor "
       discount='12%'
+      onAddToCart={addToCart}
       />
 
       <Card
-      image='src/assets/S-Series Chair.png'
+      image='./src/assets/Earrings/earring4.jpg'
        newprice='$156'
       oldprice='231'
       title="IPS LCD Gaming Monitor "
       discount='12%'
+      onAddToCart={addToCart}
       />
     
         </div>
