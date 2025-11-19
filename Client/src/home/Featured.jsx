@@ -29,7 +29,7 @@ function Featured() {
 
           <div className="absolute bottom-8 left-8 text-white max-w-xs">
             <h3 className="text-2xl font-bold">Royal Necklace Set</h3>
-            <p className="text-sm mt-2">
+            <p className="text-1xl mt-2">
               Premium handcrafted diamond necklace with stunning detailing.
             </p>
 
@@ -53,7 +53,7 @@ function Featured() {
               <h3 className="text-2xl font-bold whitespace-nowrap">
                 Bridal Collections
               </h3>
-              <p className="text-xs mt-1">
+              <p className="text-1xl mt-1">
                 Exclusive bridal sets for every special moment.
               </p>
               <button className="mt-2 text-white text-xs font-medium underline hover:text-red-400 transition">
@@ -74,7 +74,7 @@ function Featured() {
 
               <div className="absolute bottom-6 left-6 text-white max-w-[120px]">
                 <h3 className="text-lg font-bold">Gold Bangle</h3>
-                <p className="text-xs mt-1 whitespace-nowrap">
+                <p className="text-1xl mt-1 whitespace-nowrap">
                   Elegant premium gold designs.
                 </p>
                 <button className="mt-2 text-white text-1xl font-medium underline hover:text-red-400 transition">
@@ -92,7 +92,7 @@ function Featured() {
 
               <div className="absolute bottom-6 left-6 text-white max-w-[120px]">
                 <h3 className="text-lg font-bold">Bracelets</h3>
-                <p className="text-xs mt-1 whitespace-nowrap">
+                <p className="text-1xl mt-1 whitespace-nowrap">
                   Latest trendy bracelet designs.
                 </p>
                 <button className="mt-2 text-white text-1xl font-medium underline hover:text-red-400 transition">

@@ -6,7 +6,6 @@ import BestsellingProduct from "../home/BestsellingProduct";
 import Categories from "../home/Categories";
 import ExploreProducts from "../home/ExploreProducts";
 import Featured from "../home/Featured";
-import FeaturesStrip from "../home/FeaturedStrip";
 import BridalPicksSlider from "../home/BridalPicksSlider";
 export default function Home() {
   return (
@@ -19,7 +18,7 @@ export default function Home() {
       <ExploreProducts />
       <Featured />
       <BridalPicksSlider/>
-      {/* <FeaturesStrip /> */}
+      
     </>
   );
 }

@@ -60,8 +60,8 @@ function BestsellingProduct() {
           <Card
             image="src\assets\Banglesset4.webp"
             title="Stunning antique gold ruby traditional bangle set"
-            newprice="2340"
-            oldprice="4590"
+            newprice="5,340.00"
+            oldprice="7,590.00"
             discount="sale"
             onAddToCart={addToCart}
           />

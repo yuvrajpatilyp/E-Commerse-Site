@@ -86,17 +86,4 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
 };
 
 export default Card;
-  {/* <div className="flex mt-2">
-=======
-            <div className="flex mt-4 justify-center">
->>>>>>> 17c242bfe4f0b15e197bbd14066c12d2e88fb8c6
-                {[1, 2, 3, 4, 5].map((star) => (
-                    <FaStar
-                        key={star}
-                        onClick={() => handleRating(star)}
-                        className={`cursor-pointer text-lg transition ${
-                            rating >= star ? "text-yellow-400" : "text-gray-300 hover:text-yellow-400"
-                        }`}
-                    />
-                ))}
-            </div> */}
+ 

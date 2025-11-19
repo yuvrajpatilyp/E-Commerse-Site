@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const items = [
+  // images 
   {
     title: "Bridal Mangalsutra",
     img: "src/assets/mangalsutraring.jpg",
@@ -43,7 +44,7 @@ export default function BridalPicks() {
 
       <div className="relative max-w-10xl mx-auto">
 
-        {/* LEFT BUTTON */}
+        {/* Left side-button */}
         <button
           onClick={() => swiperRef.current.slidePrev()}
           className="absolute left-0 md:left-[-50px] top-1/2 -translate-y-1/2 
@@ -52,7 +53,7 @@ export default function BridalPicks() {
           <ChevronLeft size={22} />
         </button>
 
-        {/* SWIPER SLIDER HERE */}
+        {/* Swiper slider start */}
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
@@ -80,7 +81,7 @@ export default function BridalPicks() {
           ))}
         </Swiper>
 
-        {/* RIGHT BUTTON */}
+        {/* Right side-button*/}
         <button
           onClick={() => swiperRef.current.slideNext()}
           className="absolute right-0 md:right-[-50px] top-1/2 -translate-y-1/2 

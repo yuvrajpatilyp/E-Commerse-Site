@@ -8,6 +8,7 @@ import CategorySidebar from "../Categorydropdown/CategorySidebar";
 
 function Sidebar() {
   const slides = [
+    // images
     {
       id: 1,
       title: "Rounded Diamond Necklace",
@@ -45,7 +46,7 @@ function Sidebar() {
 
      <CategorySidebar/>
 
-  {/* RIGHT SLIDER */}
+  {/* Right slider */}
   <div className="md:col-span-3 w-full max-w-[90%] mx-auto">
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -59,7 +60,7 @@ function Sidebar() {
           <div
             className={`flex flex-col md:flex-row items-center justify-between w-full h-full px-6 md:px-10 py-6 text-white ${slide.bg}`}
           >
-            {/* TEXT AREA */}
+            {/* Text area */}
             <div className="space-y-3 max-w-sm">
               <div className="flex items-center gap-3 text-gray-300">
                 <span className="text-lg md:text-xl font-medium">{slide.title}</span>
@@ -74,7 +75,7 @@ function Sidebar() {
               </button>
             </div>
 
-            {/* IMAGE AREA */}
+            {/* Image area */}
             <div className="">
               <img
                 src={slide.img}
