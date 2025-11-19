@@ -33,7 +33,7 @@ function Featured() {
               Premium handcrafted diamond necklace with stunning detailing.
             </p>
 
-            <button className="mt-2 text-white text-xs font-medium underline hover:text-red-400 transition">
+            <button className="mt-2 text-white text-1xl font-medium underline hover:text-red-400 transition">
               Shop Now
             </button>
           </div>
@@ -56,7 +56,7 @@ function Featured() {
               <p className="text-1xl mt-1">
                 Exclusive bridal sets for every special moment.
               </p>
-              <button className="mt-2 text-white text-xs font-medium underline hover:text-red-400 transition">
+              <button className="mt-2 text-white text-1xl font-medium underline hover:text-red-400 transition">
                 Shop Now
               </button>
             </div>
