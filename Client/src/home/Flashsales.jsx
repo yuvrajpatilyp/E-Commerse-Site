@@ -64,6 +64,7 @@ function Flashsales() {
   const products = [
     {
       image: "src/assets/earring1.webp",
+      hoverImage: "src/assets/earring4.webp",
       title: "Gold earrings",
       newprice: "$3,120",
       oldprice: "$6,160",
@@ -135,7 +136,7 @@ function Flashsales() {
 
           {/* Title / Timer */}
           <div className="flex items-center gap-10">
-            <h2 className="text-3xl font-bold">Flash Sales</h2>
+            <h2 className="text-3xl font-bold">Trending Now</h2>
 
             {/* Timer */}
             <div className="flex gap-6">

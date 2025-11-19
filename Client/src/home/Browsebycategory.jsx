@@ -64,13 +64,13 @@ function Flashsales() {
         {/* Heading */}
         <div className="flex items-center gap-2 mb-3">
           <div className="w-3 h-10 bg-red-600 rounded-sm"></div>
-          <h2 className="text-xl font-semibold text-red-600">Categories</h2>
+          <h2 className="text-xl font-semibold text-red-600">Shop By Categories</h2>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-5">
 
           <div className="flex items-center gap-10">
-            <h2 className="text-3xl font-bold">Browse By Category</h2>
+            <h2 className="text-3xl font-bold">Find Your Perfect Match</h2>
           </div>
 
           {/* Arrow Buttons */}

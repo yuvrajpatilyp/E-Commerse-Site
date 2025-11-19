@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Heart, Eye } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
+const Card = ({title,newprice, oldprice,image,hoverImage,discount,onAddToCart,}) => {
   const [rating, setRating] = useState(0);
 
   const handleRating = (starIndex) => {
@@ -10,15 +10,7 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
   };
 
   const handleAddToCart = () => {
-    onAddToCart({
-      title,
-      newprice,
-      oldprice,
-      image,
-      discount,
-      rating,
-      qty: 1,
-    });
+    onAddToCart({title,newprice,oldprice,image,discount,rating,qty: 1, });
   };
 
   return (
@@ -30,6 +22,7 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
         relative overflow-hidden hover:shadow-lg transition duration-300
         hover:scale-105 flex items-center justify-center"
       >
+
         {/* DISCOUNT BADGE */}
         {discount && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
@@ -47,10 +40,25 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
           </button>
         </div>
 
-        {/* PRODUCT IMAGE */}
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        {/* - IMAGE SLIDE EFFECT -- */}
 
-        {/* ADD TO CART (HOVER) */}
+        {/* MAIN IMAGE */}
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-all duration-500
+          group-hover:translate-x-[-100%]"
+        />
+
+        {/* HOVER IMAGE */}
+        <img
+          src={hoverImage}
+          alt="hover"
+          className="w-full h-full object-cover absolute top-0 left-0
+          translate-x-full group-hover:translate-x-0 transition-all duration-500"
+        />
+
+        {/* ADD TO CART */}
         <button
           onClick={handleAddToCart}
           className="absolute bottom-0 left-0 right-0 bg-black text-white py-2
@@ -76,7 +84,9 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
             key={star}
             onClick={() => handleRating(star)}
             className={`cursor-pointer text-lg transition ${
-              rating >= star ? "text-yellow-400" : "text-gray-300 hover:text-yellow-400"
+              rating >= star
+                ? "text-yellow-400"
+                : "text-gray-300 hover:text-yellow-400"
             }`}
           />
         ))}
@@ -86,4 +96,3 @@ const Card = ({ title, newprice, oldprice, image, discount, onAddToCart }) => {
 };
 
 export default Card;
- 
